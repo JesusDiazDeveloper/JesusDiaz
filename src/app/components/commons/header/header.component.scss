@@ -1,0 +1,98 @@
+@import "../../../../media-queries";
+@import "../../../../styles.scss";
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+mat-toolbar{
+  height: 100px;
+  
+  .hamburguer-menu{
+    display: block;
+
+    @include tablet {
+        display: none;
+    }
+  }
+
+  .jesus-diaz-developer{
+    // color: $primary;
+    color: blue;
+    
+  }
+
+}
+mat-sidenav-content{
+  scroll-behavior: smooth;
+}
+mat-sidenav-container{
+  height: calc(100vh - 65px);
+}
+.sidenav{
+  width: 50%;
+  height: 100vh;
+
+  .sidenav-buttons-container{
+    display: flex;
+    flex-direction: column;
+
+    div.sidenav-menu-button{
+      height: 3em;
+      display: flex;
+
+      mat-icon.sidenav-icon{
+        width: 30%;
+        height: 100%;
+        margin: 0;
+        text-align: end;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+      }
+      li{
+        list-style: none;
+        display: block;
+        width: 70% ;
+        height: 100%;
+        margin: auto;
+        text-align: start;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 0 0 0 20px ;
+
+        a{
+          text-decoration: none;
+        }
+      }
+
+      .pContainer{
+        background-color: rosybrown;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.toolbar{
+  position: sticky;
+  top: 0;
+
+
+  nav{
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+    ul {
+      display: flex;
+      
+      li{
+        width: 100px;
+        list-style: none;
+      }
+    }
+  }
+}

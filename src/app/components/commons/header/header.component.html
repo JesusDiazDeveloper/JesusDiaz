@@ -1,0 +1,47 @@
+<mat-sidenav-container>
+
+    <mat-sidenav #sidenav mode="over" [(opened)]="menuOpened" class="sidenav">
+        <div class="sidenav-buttons-container">
+            <nav>
+                <ul>
+                    <div class="sidenav-menu-button">
+                        <mat-icon class="sidenav-icon">home</mat-icon>
+                        <li><a (click)="sidenav.toggle()" href="#home">Inicio</a></li>
+                    </div>
+                    <div class="sidenav-menu-button">
+                        <mat-icon class="sidenav-icon">source</mat-icon>
+                        <li><a (click)="sidenav.toggle()" href="#about">Acerca de</a></li>
+                    </div>
+                    <div class="sidenav-menu-button">
+                        <mat-icon class="sidenav-icon">delete_forever</mat-icon>
+                        <li><a (click)="sidenav.toggle()" href="#projects">Proyectos</a></li>
+                    </div>
+                </ul>
+            </nav>
+
+        </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar color="red" class="toolbar">
+            <button mat-icon-button class="example-icon hamburguer-menu" aria-label="Side Menu Button"
+                (click)="sidenav.toggle()">
+                <mat-icon>{{ menuOpened ? 'clear' : 'menu' }}</mat-icon>
+            </button>
+            <span class="jesus-diaz-developer">Jesus Diaz Developer</span>
+            <span class="example-spacer"></span>
+            <nav>
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#projects">Portafolio</a></li>
+                    <!-- Agrega enlaces para otras secciones -->
+                </ul>
+            </nav>
+        </mat-toolbar>
+
+        <app-hero></app-hero>
+        <app-about></app-about>
+        <app-projects></app-projects>
+    </mat-sidenav-content>
+</mat-sidenav-container>
