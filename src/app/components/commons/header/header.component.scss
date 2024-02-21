@@ -7,36 +7,131 @@
 
 
 mat-toolbar{
-  height: 100px;
-  
-  .hamburguer-menu{
-    display: block;
+  height: 50px;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 3px solid $primary-500;
+  box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
 
-    @include tablet {
+  @include tablet{
+    padding: 31px 32px;
+    height: 100px;
+  }
+
+  .mat-icon{ // material hidden class
+      min-width: 90px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .hamburguer-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primary-500;
+    font-size: 40px;
+
+
+    @include laptop {
         display: none;
     }
   }
 
   .jesus-diaz-developer{
-    // color: $primary;
-    color: blue;
+    text-shadow: 1px 3px px rgba(0, 0, 0, 0.161);
+    color: black;
+    font: $mob-h1;
+    span{
+      color: $primary-500;
+    }
     
   }
 
+  .desktop-nav{
+    font: $mob-normal;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    ul.custom-ul{
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      li{
+        text-align: center;
+        padding: 4px 32px ;
+        width: 130px;
+        width: 100%; // i use this for a default with that comes with Angular Material
+        flex: 1;
+
+        a{
+          font: $mob-normal;
+          text-decoration: none;
+          
+          &:visited{
+            color :black
+          }
+          &:hover{
+            padding-bottom: 5px;
+            border-bottom: 2px solid $primary-500;
+            color: $primary-500;
+            font-weight: 600;
+          }
+        }
+
+      }
+      
+    }
+  }
+
+
+  
 }
+
+
+
 mat-sidenav-content{
   scroll-behavior: smooth;
+  
 }
 mat-sidenav-container{
-  height: calc(100vh - 65px);
+  // height: calc(100vh - 65px);
 }
 .sidenav{
   width: 50%;
   height: 100vh;
 
+
   .sidenav-buttons-container{
     display: flex;
     flex-direction: column;
+
+    div.button-container{
+
+      height: 50px;
+      background-color: rgb(255, 255, 255);
+      border-bottom: 3px solid $primary-500;
+      box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
+      display: flex;
+      align-items: center;
+
+      padding-left: 1rem;
+      mat-icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      mat-icon.close-icon{
+        color: $primary-500;
+        // background-color: aqua;
+        font-size: 30px;
+        
+      }
+    }
 
     div.sidenav-menu-button{
       height: 3em;
@@ -83,7 +178,7 @@ mat-sidenav-container{
 
   nav{
     display: none;
-    @include tablet {
+    @include laptop {
       display: flex;
     }
     ul {

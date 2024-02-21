@@ -1,7 +1,11 @@
 <mat-sidenav-container>
 
+    <!-- Side Nav -->
     <mat-sidenav #sidenav mode="over" [(opened)]="menuOpened" class="sidenav">
         <div class="sidenav-buttons-container">
+            <div class="button-container">
+                <mat-icon class="close-icon">close</mat-icon>
+            </div>
             <nav>
                 <ul>
                     <div class="sidenav-menu-button">
@@ -22,24 +26,32 @@
         </div>
     </mat-sidenav>
 
+    <!-- Content  -->
     <mat-sidenav-content>
+
+        <!-- Desktop Nav bar -->
         <mat-toolbar color="red" class="toolbar">
-            <button mat-icon-button class="example-icon hamburguer-menu" aria-label="Side Menu Button"
+
+            <button mat-icon-button class="hamburguer-menu" aria-label="Side Menu Button"
                 (click)="sidenav.toggle()">
                 <mat-icon>{{ menuOpened ? 'clear' : 'menu' }}</mat-icon>
             </button>
-            <span class="jesus-diaz-developer">Jesus Diaz Developer</span>
-            <span class="example-spacer"></span>
-            <nav>
-                <ul>
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Acerca de</a></li>
-                    <li><a href="#projects">Portafolio</a></li>
+
+            <span class="jesus-diaz-developer">Jesus Diaz <span>Dev</span></span>
+            
+            <nav class="desktop-nav">
+                <ul class="custom-ul">
+                    <li class="custom-li"><a href="#home">Home</a></li>
+                    <li class="custom-li"><a href="#projects">Projects</a></li>
+                    <li class="custom-li"><a href="#projects">Tecnologies</a></li>
+                    <li class="custom-li"><a href="#about">About</a></li>
                     <!-- Agrega enlaces para otras secciones -->
                 </ul>
             </nav>
+
         </mat-toolbar>
 
+        <!-- Content  -->
         <app-hero></app-hero>
         <app-about></app-about>
         <app-projects></app-projects>
