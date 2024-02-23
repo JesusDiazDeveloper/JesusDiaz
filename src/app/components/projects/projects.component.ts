@@ -9,5 +9,6 @@ import { AfterViewInit, Component, ElementRef, HostListener } from '@angular/cor
 })
 export class ProjectsComponent  {
 
-      }
+  
+}
       

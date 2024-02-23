@@ -1,1 +1,23 @@
-<p>some-technologies works!</p>
+<section id="some-technologies">
+    <h2>Some of the technologies I work with are...</h2>
+
+    <div class="technologies-container">
+
+        @for (card of cards; let i = $index ; track i ) { 
+            <!-- there are 9 elements, just on mobile should appear all, on larger devices, only 8 
+                (see the only-mobile class in the scss)
+            -->
+            @if($last){  
+                <div class="card only-mobile">
+                    <img src={{card.srcImg}} alt="{{card.title + ' image'}}">
+                </div>
+            }
+            @else {
+                <div class="card">
+                    <img src={{card.srcImg}} alt="{{card.title + ' image'}}">
+                </div>
+            }
+        }
+        
+    </div>
+</section>

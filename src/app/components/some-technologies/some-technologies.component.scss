@@ -1,0 +1,62 @@
+@import "../../../media-queries";
+@import "../../../styles.scss";
+
+#some-technologies{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+
+h2{
+    font: $mobh2;
+    color: rgb(0, 0, 0);
+    font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.188);
+    margin:3rem auto;
+    text-align: center;
+}
+
+.technologies-container{
+    width: min(80% , 1440px);
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;  
+
+    .card{
+        border-radius: 8px;
+        // border: 2px solid black;
+        width: 33%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet{
+            width: 25%;
+        }
+
+        
+
+        img{
+
+            width: 3.5rem;
+
+            @include tablet{
+                width: clamp(3.5rem, 2.281rem + 4.063vw, 5.938rem) // max 95px
+            }
+
+        }
+            
+            
+        
+
+    }
+    .only-mobile{ // this image just appear when the view is mobile.. for aesthetic purposes
+        display: flex;
+
+        @include tablet{
+            display: none;
+        }
+    }
+}

@@ -2,25 +2,35 @@
 @import "../../../styles.scss";
 
 #about {
-    background-image: linear-gradient(#E9E9E9,#F8F8F8);
-    clip-path: polygon(0 8%, 100% 0%, 100% 87%, 0% 100%);
+    background-image: linear-gradient($secondary-500,$primary-500);
+    // background-image: linear-gradient($primary-500,$primary-600);
+    clip-path: polygon(0 4%, 100% 0%, 100% 96%, 0% 100%);
     display: flex;
     justify-content: center;
+
+    @include tablet{
+        clip-path: polygon(0 8%, 100% 0%, 100% 87%, 0% 100%);
+    }
 }
 
 .about-container{
     max-width: 1440px;
     width: 100%;
-    padding: 100px 20px 100px 20px;
+    
+    padding: 100px 20px 50px 20px;
+
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    
+    @include tablet{
+        padding: 100px 20px 100px 20px;
+    }
     h2{
         font: $mobh2;
+        color: white;
         font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.188);
         margin-bottom: 3rem;
@@ -65,10 +75,11 @@
             }
             .about-text{
                 font : $mob-normal-semi-bold;
-                color: $primary-500;
+                color: white;
+                text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.385);
                 
                 span{
-                    color: $secondary-500;
+                    color: #ffffff;
                 }
             }   
         }
