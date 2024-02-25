@@ -1,3 +1,20 @@
 <div  id="projects" >
-    <p>projects works!</p>
+
+    <!-- @for (item of projects; track $index) {
+        <div>
+            <img src="{{item.img}}" alt="">
+        </div>
+    } -->
+
+    <div class="carousel-container">
+        <p-carousel id="mi-carousel" class="p-carousel" [value]="projects" [numVisible]="1" [numScroll]="1" [circular]="true" >
+            <ng-template let-project pTemplate="item">
+                <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
+                    <div class="mb-3 card-container">
+                        <img src="{{project.img}}" alt="" class="w-6 shadow-2 img-car" />
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
 </div>
