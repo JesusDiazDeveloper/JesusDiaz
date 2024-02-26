@@ -1,38 +1,192 @@
 @import '../../../styles.scss';
 @import '../../../media-queries';
 
-#projects{
-    height: 100vh;
+#projects {
     width: 100%;
+    // background-color: red;
+    padding: 100px 0 150px 0;
+}
+
+.projects-container {
+    width: min( 80%, 1440px);
+    margin: auto;
+
+    .carousel-container {
+        display: block;
+
+        @include laptop {
+            display: none;
+        }
+    }
+
+    .grid-projects-container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .grid-card-container {
+            position: relative;
+            width: 23%;
+            background-color: blue;
+            margin: 1rem 0;
+            height: 15vh;
+            @include desktop{
+                height: 17vh;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+
+    .button-container{
+        margin: 2rem 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.card-container { // card of carousel
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .img-car {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    
+        @include tablet {
+            padding: 10px;
+        }
+    }
 }
 
 
 
-.card-container{
-    background-color: red;
-    height: 200px;
+
+.hover-info , :host ::ng-deep .hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    display: flex;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    color: white;
+    // display: none; /* Oculta por defecto */
     justify-content: center;
-    margin-bottom: 30px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
 }
 
-.img-car{
-    object-fit: cover ; 
-    width: 100%; /* Asegúrate de que la imagen ocupe todo el ancho */
-    height: 100%; /* Asegúrate de que la imagen ocupe todo el alto */
+.hover-info.show , :host ::ng-deep .hover-info.show{
+    display: block; /* Muestra al hacer hover */
+}
+
+.hover-info p  , :host ::ng-deep .hover-info p{
+        height: 40%;
+        font-size: 1rem;
+        // background-color: aqua;
+        margin: 0;
+        text-align: center;
+        padding-top: 10px;
+}
+
+.hover-info .technologies-container{
+    display: flex;
+    width: 100%;
+    height: 60%;
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+    align-items: center;
+    
+    .tech-img-container.ng-star-inserted {
+        width: 20%;
+        height: auto;
+        // background-color: red;   
+    }
+
+}
+
+.tech-img-container.ng-star-inserted {
+    width: 20%;
+    height: auto;
+    // background-color: red;   
+}
+
+.technology-img-of-carousel{
+    width: 100%;
+    height: 100%;
+
 }
 
 
-#algo .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
-     color: red !important;
+
+
+// All carousel Container
+:host ::ng-deep {
+    .p-carousel-container {
+        background-color: white;
+        max-height: 300px;
+    }
 }
 
-.carousel-container #mi-carousel .p-carousel .p-carousel-content .p-carousel-prev,
-.carousel-container #mi-carousel .p-carousel .p-carousel-content .p-carousel-next {
-    width: 13rem; /* Cambia el valor según sea necesario */
-    height: 13rem; /* Cambia el valor según sea necesario */
-    color: red;
-    background-color: red !important;
+
+// Arrow icons Container
+:host ::ng-deep {
+
+    .p-carousel .p-carousel-content .p-carousel-prev,
+    .p-carousel .p-carousel-content .p-carousel-next {
+        // color: red;
+        width: 5%;
+        padding: 0 2rem;
+        background-color: white;
+    }
 }
 
+// Arrow icons
+:host ::ng-deep {
+    .carousel-prev-icon {
+        width: 2rem;
+        height: 2rem;
+        color: $primary-500;
+        transition: color 0.3s ease;
+    }
+
+
+    .carousel-prev-icon:hover {
+        color: $primary-700;
+    }
+}
+
+:host ::ng-deep {
+    .p-carousel-indicators {
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+    }
+
+
+}
+
+// bottom circles 
+:host ::ng-deep {
+    .p-link {
+        border-radius: 50px;
+        width: 8px;
+        margin: 0 0.2rem;
+    }
+}
+
+// bottom circles selected
+:host ::ng-deep {
+    .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+        background-color: $primary-500;
+    }
+}

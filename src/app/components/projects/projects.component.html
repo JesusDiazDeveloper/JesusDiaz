@@ -1,20 +1,63 @@
-<div  id="projects" >
+<section id="projects">
+    <div class="projects-container">
+        <h2>Projects</h2>
+        <div class="carousel-container">
+            <p-carousel [value]="projects" [circular]="true" [autoplayInterval]=3000
+                [responsiveOptions]="responsiveOptions">
 
-    <!-- @for (item of projects; track $index) {
-        <div>
-            <img src="{{item.img}}" alt="">
+                <ng-template let-project pTemplate="item">
+                    <div class="card-container" (mouseover)="showOverlay(project.id)" (mouseleave)="hideOverlay()">
+
+                        <img src="{{project.img}}" alt="{{project.name}}" class="img-car" />
+
+
+                        <div class="hover-info" [class.show]="showOverlayIndex == project.id">
+                            <p>
+                                {{project.name}}
+                            </p>
+                            <div class="technologies-container">
+                                <!-- iterate over all technologies of each project -->
+                                @for (tech of project.technologies ; track $index) {
+                                <div class="tech-img-container">
+                                    <img class="technology-img-of-carousel" src="../../../assets/some-technologies/{{tech}}.png" alt="">
+                                </div>
+                                }
+                            </div>
+                        </div>
+
+                    </div>
+                </ng-template>
+            </p-carousel>
         </div>
-    } -->
 
-    <div class="carousel-container">
-        <p-carousel id="mi-carousel" class="p-carousel" [value]="projects" [numVisible]="1" [numScroll]="1" [circular]="true" >
-            <ng-template let-project pTemplate="item">
-                <div class="border-1 surface-border border-round m-2 text-center py-5 px-3">
-                    <div class="mb-3 card-container">
-                        <img src="{{project.img}}" alt="" class="w-6 shadow-2 img-car" />
+
+        <div class="grid-projects-container">
+
+            @for (project of projects; track project.name ; let i = $index) {
+            <div class="grid-card-container" (mouseover)="showOverlay(i)" (mouseleave)="hideOverlay()">
+
+                <img src="{{project.img}}" alt="{{project.name}}">
+
+                <div class="hover-info" [class.show]="showOverlayIndex === i">
+                    <p>
+                        {{project.name}}
+                    </p>
+                    <div class="technologies-container">
+                        <!-- iterate over all technologies of each project -->
+                        @for (tech of project.technologies ; track $index) {
+                        <div class="tech-img-container">
+                            <img src="../../../assets/some-technologies/{{tech}}.png" alt="">
+                        </div>
+                        }
                     </div>
                 </div>
-            </ng-template>
-        </p-carousel>
+            </div>
+            }
+
+        </div>
+
+        <div class="button-container">
+            <app-primary-button id="algo" text="See more"></app-primary-button>
+        </div>
     </div>
-</div>
+</section>
