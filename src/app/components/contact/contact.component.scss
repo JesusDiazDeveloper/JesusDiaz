@@ -1,0 +1,18 @@
+
+#contact-component{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    margin: auto;
+
+    .custom-input{
+        width: 80%;
+    }
+}

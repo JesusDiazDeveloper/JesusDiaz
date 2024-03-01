@@ -3,8 +3,7 @@
 
 #projects {
     width: 100%;
-    // background-color: red;
-    padding: 100px 0 150px 0;
+    padding: 100px 0 80px 0;
 }
 
 .projects-container {
@@ -25,7 +24,11 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        display: none;
 
+        @include laptop{
+            display: flex;
+        }
         .grid-card-container {
             position: relative;
             width: 23%;
@@ -71,18 +74,35 @@
 
 
 .hover-info , :host ::ng-deep .hover-info {
+    // when the carousel has 1 image, mobile first
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 20px;
+    left: 20px;
+    width: calc(100% - 40px) ;
+    height: calc(100% - 40px);
+    margin: auto;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
     color: white;
-    // display: none; /* Oculta por defecto */
+    display: none; /* Oculta por defecto */
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
+    padding: 20px;
+    @include tablet { // when the carousel has 2 images
+        width: calc(100% - 20px) ;
+        height: calc(100% - 20px);
+        top: 10px;
+        left: 10px;
+        padding: 10px;
+    }
+
+    @include laptop{ // When the carousel is hidden, the grid is shown, this is the correct properties for overlay.
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
 }
 
 .hover-info.show , :host ::ng-deep .hover-info.show{
@@ -117,13 +137,13 @@
 .tech-img-container.ng-star-inserted {
     width: 20%;
     height: auto;
+    border-radius: 50%;
     // background-color: red;   
 }
 
 .technology-img-of-carousel{
     width: 100%;
     height: 100%;
-
 }
 
 

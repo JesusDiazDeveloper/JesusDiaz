@@ -9,6 +9,8 @@ import { AboutComponent } from "../../about/about.component";
 import { ProjectsComponent } from "../../projects/projects.component";
 import { NgStyle } from '@angular/common';
 import { SomeTechnologiesComponent } from "../../some-technologies/some-technologies.component";
+import { ContactComponent } from "../../contact/contact.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
     selector: 'app-header',
@@ -25,7 +27,9 @@ import { SomeTechnologiesComponent } from "../../some-technologies/some-technolo
         AboutComponent,
         ProjectsComponent,
         NgStyle,
-        SomeTechnologiesComponent
+        SomeTechnologiesComponent,
+        ContactComponent,
+        FooterComponent
     ]
 })
 

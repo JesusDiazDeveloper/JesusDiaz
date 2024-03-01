@@ -53,12 +53,10 @@ export class ProjectsComponent  {
     showOverlayIndex: number | null = null;
 
     showOverlay(index: number) {
-        console.log("index:" +index);
         this.showOverlayIndex = index;
     }
 
     hideOverlay() {
-        console.log("salio");
         this.showOverlayIndex = null;
     }
 }

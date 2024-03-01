@@ -1,0 +1,32 @@
+<section id="contact-component">
+    <h2>Let's Contact</h2>
+
+    <form (ngSubmit)="send()" action="javascript:void(0);" [formGroup]="form" class="form-container">
+
+        <div class="mb-3 custom-input">
+            <label class="form-label">Name</label>
+            <input type="text" name="name" required formControlName="from_name" placeholder="from_name"
+                class="form-control">
+        </div>
+        <div class="mb-3 custom-input">
+            <label class="form-label">Email address</label>
+            <input type="email" name="email" formControlName="from_email" placeholder="from_email" required
+                class="form-control">
+        </div>
+        <div class="mb-3 custom-input">
+            <label class="form-label">Subject</label>
+            <input type="text" name="subject" required formControlName="subject" placeholder="subject"
+                class="form-control">
+        </div>
+
+        <div class="mb-3 custom-input">
+            <label class="form-label">Message</label>
+
+            <textarea name="description" formControlName="message" required class="form-control" placeholder="message"
+                rows="4">
+        </textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+</section>
