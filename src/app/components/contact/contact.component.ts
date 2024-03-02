@@ -17,6 +17,8 @@ import { JsonPipe } from '@angular/common';
 })
 export class ContactComponent {
 
+  
+
   private service = inject(ContactServiceService);
   private fb = inject(FormBuilder);
 
@@ -30,7 +32,11 @@ export class ContactComponent {
 
   async send() {
 
-
+    if (this.form.invalid) {
+      // Si el formulario no es válido, detener el envío y mostrar un mensaje de error
+      alert("Please fill out all fields before submitting.");
+      return;
+  }
 
     let data = {
       from_name: this.form.value.from_name,
@@ -44,17 +50,18 @@ export class ContactComponent {
       const response = await this.service.send(data);
       if (response) {
         console.log(response);
-        alert("Message has been sent succesfully");
+        // TODO:  create Modal
+        alert("Message has been sent succesfully"); 
         this.form.reset();
       }
       else {
+         // TODO:  create Modal
         alert("There was an error, try again later");
       }
     } catch (error) {
+       // TODO:  create Modal
       alert("There was an error, try again later");
     }
-
-
   }
 }
 

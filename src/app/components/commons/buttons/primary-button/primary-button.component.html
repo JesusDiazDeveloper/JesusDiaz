@@ -1,3 +1,15 @@
-<button class="primary-button">
-    {{text}}
-</button>
+<!-- if there is type, i want to use it as a submit button for instance -->
+<!-- else , simply i want to use it as a normal button-->
+@if(type){
+    <button type="{{type}}" class="primary-button">
+        {{text}}
+    </button>
+}
+@else {
+    <button class="primary-button">
+        {{text}}
+    </button>
+}
+
+
+

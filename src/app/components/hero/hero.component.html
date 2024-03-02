@@ -1,5 +1,5 @@
 
-<section   class="hero-section" #hero > 
+<section   class="hero-section" id="hero" > 
     <div class="hero-container">
         <div class="hero-text">
             <h1>Hi, My name is Jesus<br>
@@ -14,8 +14,13 @@
             </figure>
 
             <div class="buttons-container">
-                <app-primary-button id="algo" text="Contact"></app-primary-button>
-                <app-primary-button id="algo" text="Download CV"></app-primary-button>
+                <a href="#contact">
+                    <button class="primary-button">Contact</button>
+                </a>
+                <!-- TODO: put an spinner here -->
+                <a href="https://drive.google.com/uc?export=download&id=16BilJl9JFEWigMLp_iaYZ3Quusz4T8Eb">
+                    <button class="primary-button">Download CV</button>
+                </a> 
             </div>
         </div>
         <figure>
@@ -24,7 +29,7 @@
         
     </div>
     <figure class="icons-container">
-        <img src="../../../assets/icons/github.svg" alt="github icon">
-        <img src="../../../assets/icons/linkedin.svg" alt="linkedin icon">
+        <a href="https://github.com/JesusDiazDeveloper"><img src="../../../assets/icons/github.svg" alt="github icon"></a>
+        <a href="https://www.linkedin.com/in/jesusdiazdeveloper/"><img src="../../../assets/icons/linkedin.svg" alt="linkedin icon"></a>
     </figure>
 </section>

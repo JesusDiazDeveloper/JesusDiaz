@@ -102,7 +102,8 @@ mat-sidenav-container{
 .sidenav{
   width: 50%;
   height: 100vh;
-
+  position: fixed;
+  top: 0;
 
   .sidenav-buttons-container{
     display: flex;
@@ -110,26 +111,25 @@ mat-sidenav-container{
 
     div.button-container{
 
-      height: 50px;
       background-color: rgb(255, 255, 255);
       border-bottom: 3px solid $primary-500;
-      box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
+      // box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
       display: flex;
       align-items: center;
-
       padding-left: 1rem;
+
       mat-icon{
         display: flex;
         justify-content: center;
         align-items: center;
-
       }
+
+      
 
       mat-icon.close-icon{
         color: $primary-500;
-        // background-color: aqua;
         font-size: 30px;
-        
+        cursor: pointer;
       }
     }
 
@@ -161,6 +161,10 @@ mat-sidenav-container{
         a{
           text-decoration: none;
         }
+        a:visited{
+          text-decoration: none;
+          color: inherit;
+        }
       }
 
       .pContainer{
@@ -172,10 +176,6 @@ mat-sidenav-container{
 }
 
 .toolbar{
-  position: sticky;
-  top: 0;
-
-
   nav{
     display: none;
     @include laptop {
@@ -190,4 +190,29 @@ mat-sidenav-container{
       }
     }
   }
+}
+
+.fixed{
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  transition: all 0.3s linear;
+  height: 50px;
+}
+.no-fixed{
+  height: 75px;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  transition: all 0.3s linear;
+}
+
+.sidenav-top-button-fixed{
+  height: 50px;
+  transition: all 0.3s linear;
+}
+
+.sidenav-top-button-no-fixed{
+  transition: all 0.3s linear;
+  height: 75px;
 }

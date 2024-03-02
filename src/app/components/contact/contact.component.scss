@@ -1,7 +1,10 @@
+@import '../../../styles.scss';
 
-#contact-component{
-    width: 100%;
+#contact{
+    width: 80%;
     margin-bottom: 100px;
+    margin: 30px auto 100px;
+    max-width: 1440px;
 }
 
 .form-container{
@@ -9,10 +12,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 50%;
+    max-width: 100%;
     margin: auto;
+    @include tablet{
+        max-width: 90%;
+    }
+    @include laptop{
+        max-width: 80%;
+    }
+    @include desktop{
+        max-width: 50%;
+    }
 
     .custom-input{
         width: 80%;
+    }
+    .form-control{
+        border: 1px solid rgb(180, 180, 180);
+        border-radius: 3px;
     }
 }

@@ -3,8 +3,8 @@
     <!-- Side Nav -->
     <mat-sidenav #sidenav mode="over" [(opened)]="menuOpened" class="sidenav">
         <div class="sidenav-buttons-container">
-            <div class="button-container">
-                <mat-icon class="close-icon">close</mat-icon>
+            <div class="button-container" [ngClass]="navbarfixed ? 'sidenav-top-button-fixed' : 'sidenav-top-button-no-fixed'">
+                <mat-icon class="close-icon" (click)="closeMenu()">close</mat-icon>
             </div>
             <nav>
                 <ul>
@@ -30,22 +30,21 @@
     <mat-sidenav-content>
 
         <!-- Desktop Nav bar -->
-        <mat-toolbar color="red" class="toolbar">
+        <mat-toolbar color="red" class="toolbar" (scroll)="onScroll()" [ngClass]="navbarfixed?'fixed':'no-fixed'">
 
             <button mat-icon-button class="hamburguer-menu" aria-label="Side Menu Button"
                 (click)="sidenav.toggle()">
                 <mat-icon>{{ menuOpened ? 'clear' : 'menu' }}</mat-icon>
             </button>
 
-            <span class="jesus-diaz-developer">Jesus Diaz <span>Dev</span></span>
+            <a href="#hero"><span class="jesus-diaz-developer">Jesus Diaz <span>Dev</span></span></a>
             
             <nav class="desktop-nav">
                 <ul class="custom-ul">
-                    <li class="custom-li"><a href="#home">Home</a></li>
+                    <li class="custom-li"><a href="#hero">Home</a></li>
                     <li class="custom-li"><a href="#projects">Projects</a></li>
-                    <li class="custom-li"><a href="#projects">Tecnologies</a></li>
+                    <li class="custom-li"><a href="#some-technologies">Tecnologies</a></li>
                     <li class="custom-li"><a href="#about">About</a></li>
-                    <!-- Agrega enlaces para otras secciones -->
                 </ul>
             </nav>
 

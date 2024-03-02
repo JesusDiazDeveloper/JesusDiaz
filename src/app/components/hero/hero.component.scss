@@ -2,14 +2,13 @@
 @import "../../../styles.scss";
 
 #home{
-    height: 100vh;
+    // height: 100vh;
     width: 100%;
     background-color: rgb(255, 255, 255);
 }
 
 .hero-section{
     display: flex;
-    // background-color: rgba(127, 255, 212, 0.614);
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -17,7 +16,7 @@
     
     
     .hero-container{
-        // background-color: rgba(165, 42, 42, 0.559);
+        padding: 3rem 0 0 0;
         display: flex;
         justify-content: space-between;
         
@@ -29,15 +28,15 @@
 
         @include tablet{
             flex-direction: row;
-            padding: 0 2rem;
+            padding: 8rem 2rem;
         }
         @include laptop{
             max-width: 1440px;
             width: 100%;
-            padding: 3rem 5rem; 
+            padding: 8rem 5rem; 
         }
         @include desktop{
-             padding: 6rem 9.375rem 6rem 6.25rem;
+             padding: 8rem 9.375rem 6rem 6.25rem;
         }
 
 
@@ -97,7 +96,7 @@
                 gap: 1rem;
 
                 @include tablet{
-                    gap: 0.3rem  ;
+                    gap: .8rem  ;
                 }
 
                 @include laptop{

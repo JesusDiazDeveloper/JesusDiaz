@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "../src/_media-queries";
+@import "./media-queries";
 
 
 * {
@@ -156,12 +157,50 @@ a {
   }
 
 
-  h2{
-    font: $mobh2;
-    color: rgb(0, 0, 0);
-    font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.188);
-    margin:3rem auto;
-    text-align: center;
+
 }
+
+h2{
+  font: $mobh2;
+  color: rgb(0, 0, 0);
+  font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.188);
+  margin:3rem auto;
+  text-align: center;
+}
+
+.primary-button{
+
+  color: white;
+  
+  padding: 8px 10px;
+
+  background-image: linear-gradient(160deg, #51bef3 20%, #1877F2 150%); 
+  border-radius: 4px;
+  box-shadow: 3px, 1px, 4px, rgb(0, 0, 0,0.25);
+
+  font-size: .8rem;
+
+
+  @include tablet{
+      padding: 8px 15px;
+  }
+
+  @include laptop{
+      padding: 10px 22px;
+      font-size: 1rem;
+  }
+
+  @include desktop{
+      padding: 10px 25px;
+      font-size: 1rem;
+  }
+
+  transition: background-color 0.3s ease; /* Agregar una transición suave */
+  
+}
+
+.primary-button:hover{
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.283);
+  background-image: linear-gradient(160deg, #2dacec 20%, #046efa 150%); /* Mantén el gradiente original */
 }

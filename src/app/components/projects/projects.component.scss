@@ -7,7 +7,7 @@
 }
 
 .projects-container {
-    width: min( 80%, 1440px);
+    width: min(80%, 1440px);
     margin: auto;
 
     .carousel-container {
@@ -26,18 +26,25 @@
         justify-content: space-between;
         display: none;
 
-        @include laptop{
+        @include laptop {
             display: flex;
         }
+
         .grid-card-container {
             position: relative;
             width: 23%;
             background-color: blue;
             margin: 1rem 0;
-            height: 15vh;
-            @include desktop{
-                height: 17vh;
+            height:clamp(5rem, 1.571rem + 7.143vw, 8rem);  
+
+            @include desktop {
+                height: 150px;
             }
+
+            p {
+                padding: 0;
+            }
+
             img {
                 width: 100%;
                 height: 100%;
@@ -47,89 +54,62 @@
 
     }
 
-    .button-container{
+    .button-container {
         margin: 2rem 0;
         display: flex;
         justify-content: center;
     }
 }
 
-.card-container { // card of carousel
+$padding-para-carrosel-tablet : 10px;
+
+.card-container {
+    // card of carousel
     width: 100%;
-    height: 100%;
+    height: clamp(6rem, -0.667rem + 35.556vw, 10rem);
     position: relative;
+    display: flex;
+    @include tablet{
+        height: clamp(6rem, -0.667rem + 22.222vw, 10rem);
+    }
     .img-car {
         object-fit: cover;
         width: 100%;
         height: 100%;
-        padding: 20px;
-    
+        
         @include tablet {
-            padding: 10px;
+            padding: $padding-para-carrosel-tablet;
         }
     }
 }
 
 
 
+.hover-info.show,
+:host ::ng-deep .hover-info.show {
+    display: block;
+    /* Muestra al hacer hover */
+}
 
-.hover-info , :host ::ng-deep .hover-info {
-    // when the carousel has 1 image, mobile first
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: calc(100% - 40px) ;
-    height: calc(100% - 40px);
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-    color: white;
-    display: none; /* Oculta por defecto */
-    justify-content: center;
-    align-items: center;
+.hover-info p,
+:host ::ng-deep .hover-info p {
+    height: 40%;
+    font-size: 1rem;
+    margin: 0;
     text-align: center;
-    cursor: pointer;
-    padding: 20px;
-    @include tablet { // when the carousel has 2 images
-        width: calc(100% - 20px) ;
-        height: calc(100% - 20px);
-        top: 10px;
-        left: 10px;
-        padding: 10px;
-    }
-
-    @include laptop{ // When the carousel is hidden, the grid is shown, this is the correct properties for overlay.
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
 }
 
-.hover-info.show , :host ::ng-deep .hover-info.show{
-    display: block; /* Muestra al hacer hover */
-}
-
-.hover-info p  , :host ::ng-deep .hover-info p{
-        height: 40%;
-        font-size: 1rem;
-        // background-color: aqua;
-        margin: 0;
-        text-align: center;
-        padding-top: 10px;
-}
-
-.hover-info .technologies-container{
+.hover-info .technologies-container {
     display: flex;
     width: 100%;
     height: 60%;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    
+
     .tech-img-container.ng-star-inserted {
         width: 20%;
         height: auto;
-        // background-color: red;   
     }
 
 }
@@ -141,7 +121,7 @@
     // background-color: red;   
 }
 
-.technology-img-of-carousel{
+.technology-img-of-carousel {
     width: 100%;
     height: 100%;
 }
@@ -155,6 +135,9 @@
         background-color: white;
         max-height: 300px;
     }
+    ol , ul {
+        padding: 0;
+    }
 }
 
 
@@ -165,18 +148,26 @@
     .p-carousel .p-carousel-content .p-carousel-next {
         // color: red;
         width: 5%;
-        padding: 0 2rem;
+        padding: 0 1rem;
         background-color: white;
+        @include tablet{
+            padding: 0 2rem;
+        }
     }
 }
 
 // Arrow icons
 :host ::ng-deep {
     .carousel-prev-icon {
-        width: 2rem;
-        height: 2rem;
+        width: clamp(1.5rem, 1.143rem + 1.786vw, 2rem);
+        height: clamp(1.5rem, 1.143rem + 1.786vw, 2rem);
         color: $primary-500;
         transition: color 0.3s ease;
+        @include tablet{
+            width: clamp(1.5rem, 1.143rem + 1.786vw, 2rem);
+            height: clamp(1.5rem, 1.143rem + 1.786vw, 2rem);
+        }
+        
     }
 
 
@@ -187,9 +178,12 @@
 
 :host ::ng-deep {
     .p-carousel-indicators {
-        margin-top: 2rem;
+        margin-top: 0.5rem;
         display: flex;
         width: 100%;
+        @include tablet{
+            margin-top: 1.5rem;
+        }
     }
 
 
@@ -209,4 +203,40 @@
     .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
         background-color: $primary-500;
     }
+}
+
+
+.hover-info,
+:host ::ng-deep .hover-info {
+    // when the carousel has 1 image, mobile first
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo semitransparente */
+    color: white;
+    display: none; /* Oculta por defecto */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    @include tablet {
+        width: calc(100% - $padding-para-carrosel-tablet *2);
+        height:calc(100% - $padding-para-carrosel-tablet *2);
+        top: $padding-para-carrosel-tablet;
+        left: $padding-para-carrosel-tablet;
+    }
+
+    @include laptop {
+        // When the carousel is hidden, the grid is shown, 
+        // this is the correct properties for overlay IN GRID-MODE.
+        width: calc(100% );
+        height:calc(100% );
+        top: 0px;
+        left: 0px;
+    }
+
+
 }

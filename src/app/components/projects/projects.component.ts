@@ -50,6 +50,9 @@ export class ProjectsComponent  {
         ];
 
 
+
+
+
     showOverlayIndex: number | null = null;
 
     showOverlay(index: number) {
@@ -59,5 +62,6 @@ export class ProjectsComponent  {
     hideOverlay() {
         this.showOverlayIndex = null;
     }
+    
 }
       

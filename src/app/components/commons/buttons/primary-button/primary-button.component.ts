@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PrimaryButtonComponent {
   @Input({required : true})text !: string ;
+  @Input()type !: string ;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -7,7 +7,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from '../../hero/hero.component';
 import { AboutComponent } from "../../about/about.component";
 import { ProjectsComponent } from "../../projects/projects.component";
-import { NgStyle } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { SomeTechnologiesComponent } from "../../some-technologies/some-technologies.component";
 import { ContactComponent } from "../../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
@@ -29,15 +29,19 @@ import { FooterComponent } from "../footer/footer.component";
         NgStyle,
         SomeTechnologiesComponent,
         ContactComponent,
-        FooterComponent
+        FooterComponent,
+        NgClass
     ]
 })
 
 
 export class HeaderComponent {
+
   menuOpened: boolean = false;
   screenWidth: number;
+  navbarfixed : boolean = false;
 
+  
   constructor() {
     // set screenWidth on page load
     this.screenWidth = window.innerWidth;
@@ -45,6 +49,15 @@ export class HeaderComponent {
     window.addEventListener('resize', this.handleResize);
     // Llamamos a handleResize para establecer el estado inicial
     this.handleResize();
+  }
+
+  @HostListener('window:scroll',['$event'])onScroll(){
+    if(window.scrollY > 100) {
+      this.navbarfixed=true;
+    }
+    else{
+      this.navbarfixed=false;
+    }
   }
 
   // Método para manejar el redimensionamiento
@@ -57,4 +70,8 @@ export class HeaderComponent {
       this.menuOpened = false; 
     }
   };
+
+  closeMenu() {
+    this.menuOpened=false;
+    }
 }
