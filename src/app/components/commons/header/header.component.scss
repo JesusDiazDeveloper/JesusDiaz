@@ -63,7 +63,7 @@ mat-toolbar{
         text-align: center;
         padding: 4px 32px ;
         width: 130px;
-        width: 100%; // i use this for a default with that comes with Angular Material
+        width: 100%; 
         flex: 1;
 
         a{
@@ -96,21 +96,20 @@ mat-sidenav-content{
   scroll-behavior: smooth;
   background-color: white;
 }
-mat-sidenav-container{
-  // height: calc(100vh - 65px);
-}
+
 .sidenav{
   width: 50%;
   height: 100vh;
   position: fixed;
   top: 0;
+  }
 
   .sidenav-buttons-container{
     display: flex;
     flex-direction: column;
+  }
 
-    div.button-container{
-
+    div.button-container{ 
       background-color: rgb(255, 255, 255);
       border-bottom: 3px solid $primary-500;
       // box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
@@ -124,16 +123,15 @@ mat-sidenav-container{
         align-items: center;
       }
 
-      
-
       mat-icon.close-icon{
         color: $primary-500;
         font-size: 30px;
         cursor: pointer;
       }
-    }
+    } 
 
-    div.sidenav-menu-button{
+    div.sidenav-menu-button{ //aa
+
       height: 3em;
       display: flex;
 
@@ -166,14 +164,14 @@ mat-sidenav-container{
           color: inherit;
         }
       }
-
+      
       .pContainer{
         background-color: rosybrown;
         width: 100%;
       }
     }
-  }
-}
+
+
 
 .toolbar{
   nav{

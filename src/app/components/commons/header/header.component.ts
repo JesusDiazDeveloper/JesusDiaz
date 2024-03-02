@@ -16,7 +16,7 @@ import { FooterComponent } from "../footer/footer.component";
     selector: 'app-header',
     standalone: true,
     templateUrl: './header.component.html',
-    styleUrl: './header.component.scss',
+    styleUrl:  './header.component.scss',
     imports: [
         RouterOutlet,
         MatToolbarModule,
