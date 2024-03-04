@@ -9,6 +9,6 @@ import { PrimaryButtonComponent } from "../commons/buttons/primary-button/primar
     imports: [PrimaryButtonComponent]
 })
 export class HeroComponent   {
-    
+
 
 }

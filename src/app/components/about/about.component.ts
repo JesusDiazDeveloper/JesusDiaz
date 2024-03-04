@@ -9,6 +9,5 @@
     styleUrl: './about.component.scss'
   })
   export class AboutComponent {
-
     
   }

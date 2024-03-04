@@ -9,20 +9,20 @@ import { PrimaryButtonComponent } from "../commons/buttons/primary-button/primar
     selector: 'app-projects',
     standalone: true,
     templateUrl: './projects.component.html',
-    styleUrl: './projects.component.scss',
+    styleUrls: ['./projects.component.scss', './additional.scss'],
     imports: [CarouselModule, TagModule, PrimaryButtonComponent]
 })
 export class ProjectsComponent  {
 
   projects : ProjectDTO [] = [
-    {id : 1 , "name" : "unNombre" , "img": "../../../assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 2 , "name" : "unNombre" , "img": "../../../assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 3 , "name" : "unNombre" , "img": "../../../assets/projects/3.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 4 , "name" : "unNombre" , "img": "../../../assets/projects/4.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 5 , "name" : "unNombre" , "img": "../../../assets/projects/5.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 6 , "name" : "unNombre" , "img": "../../../assets/projects/6.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 7 , "name" : "unNombre" , "img": "../../../assets/projects/7.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 8 , "name" : "unNombre" , "img": "../../../assets/projects/8.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 1 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 2 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 3 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 4 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 5 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 6 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 7 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
+    {id : 8 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
   ];
 
   responsiveOptions : CarouselResponsiveOptions [] = [
