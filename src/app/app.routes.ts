@@ -4,5 +4,6 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
 
 export const routes: Routes = [
     {path: '' , component: HomeComponent},
-    {path : '/project' , component: ProjectDetailsComponent}
+    {path : 'projects' , component: ProjectDetailsComponent},
+    {path : '**' , component: HomeComponent}
 ];
