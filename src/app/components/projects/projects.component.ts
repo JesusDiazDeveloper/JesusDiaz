@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CarouselModule, CarouselResponsiveOptions } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
-import { ButtonModule } from 'primeng/button';
 import { ProjectDTO } from '../../models/projects/projectDTO';
 import { PrimaryButtonComponent } from "../commons/buttons/primary-button/primary-button.component";
+import { Router } from '@angular/router';
+import { ProjectsService } from '../../services/projects.service';
 
 @Component({
     selector: 'app-projects',
@@ -12,46 +13,40 @@ import { PrimaryButtonComponent } from "../commons/buttons/primary-button/primar
     styleUrls: ['./projects.component.scss', './additional.scss'],
     imports: [CarouselModule, TagModule, PrimaryButtonComponent]
 })
-export class ProjectsComponent  {
+export class ProjectsComponent  implements OnInit{
+    
+    router: Router = inject(Router);
+    projectService = inject(ProjectsService);
+    projects!: ProjectDTO[];
 
-  projects : ProjectDTO [] = [
-    {id : 1 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 2 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 3 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 4 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 5 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 6 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 7 , "name" : "unNombre" , "img": "assets/projects/1.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-    {id : 8 , "name" : "unNombre" , "img": "assets/projects/2.jpg", technologies : ["Java" , "JS" , "Angular" , "React" ] },
-  ];
-
-  responsiveOptions : CarouselResponsiveOptions [] = [
-
-            {
-                breakpoint: '10000px',
-                numVisible: 3,
-                numScroll: 1
-            },
-            {
-                breakpoint: '1280px',
-                numVisible: 3,
-                numScroll: 1
-            },
-            {
-                breakpoint: '769px',
-                numVisible: 2,
-                numScroll: 1
-            },
-            {
-              breakpoint: '481px',
-              numVisible: 1,
-              numScroll: 1
-          }
-        ];
+    ngOnInit() : void {
+        this.projects = this.projectService.getAll();
+    }
 
 
+    responsiveOptions: CarouselResponsiveOptions[] = [
 
-
+        {
+            breakpoint: '10000px',
+            numVisible: 3,
+            numScroll: 1
+        },
+        {
+            breakpoint: '1280px',
+            numVisible: 3,
+            numScroll: 1
+        },
+        {
+            breakpoint: '769px',
+            numVisible: 2,
+            numScroll: 1
+        },
+        {
+            breakpoint: '481px',
+            numVisible: 1,
+            numScroll: 1
+        }
+    ];
 
     showOverlayIndex: number | null = null;
 
@@ -62,6 +57,8 @@ export class ProjectsComponent  {
     hideOverlay() {
         this.showOverlayIndex = null;
     }
-    
+
+    navigateToDetail(id: string) {
+        this.router.navigate(['/projects' , id]);
+    }
 }
-      

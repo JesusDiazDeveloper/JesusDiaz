@@ -28,17 +28,30 @@
 
     <!-- Content  -->
     <mat-sidenav-content>
-
+        
         <!-- Desktop Nav bar -->
         <mat-toolbar color="red" class="toolbar" (scroll)="onScroll()" [ngClass]="navbarfixed?'fixed':'no-fixed'">
-
+            
             <button mat-icon-button class="hamburguer-menu" aria-label="Side Menu Button"
                 (click)="sidenav.toggle()">
                 <mat-icon>{{ menuOpened ? 'clear' : 'menu' }}</mat-icon>
             </button>
 
             <a href="#hero"><span class="jesus-diaz-developer">Jesus Diaz <span>Dev</span></span></a>
-            
+            <div class="language-selector-container">
+                <button  mat-icon-button [matMenuTriggerFor]="menu" >
+                    <img src="../../../../assets/icons/argentina.png" alt="">
+                  </button>
+                  <mat-menu #menu="matMenu" id="ppp">
+                    <button mat-icon-button>
+                      <img class="aa" src="../../../../assets/icons/argentina.png" alt="">
+                    </button>
+                    <button mat-icon-button>
+                        <img class="aa" src="../../../../assets/icons/estados-unidos.png" alt="">
+                    </button>
+                  </mat-menu>
+                  
+            </div>
             <nav class="desktop-nav">
                 <ul class="custom-ul">
                     <li class="custom-li"><a href="#hero">Home</a></li>

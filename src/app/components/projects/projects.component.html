@@ -6,7 +6,7 @@
                 [responsiveOptions]="responsiveOptions">
 
                 <ng-template let-project pTemplate="item">
-                    <div class="card-container" (mouseover)="showOverlay(project.id)" (mouseleave)="hideOverlay()">
+                    <div class="card-container" (mouseover)="showOverlay(project.id)" (mouseleave)="hideOverlay()" (click)="navigateToDetail(project.id)">
 
                         <img src="{{project.img}}" alt="{{project.name}}" class="img-car" />
 
@@ -34,18 +34,18 @@
         <div class="grid-projects-container">
 
             @for (project of projects; track project.name ; let i = $index) {
-            <div class="grid-card-container" (mouseover)="showOverlay(i)" (mouseleave)="hideOverlay()">
+            <div class="grid-card-container" (mouseover)="showOverlay(i)" (mouseleave)="hideOverlay()" (click)="navigateToDetail(project.id)" >
 
                 <img src="{{project.img}}" alt="{{project.name}}">
 
-                <div class="hover-info" [class.show]="showOverlayIndex === i">
+                <div class="hover-info" [class.show]="showOverlayIndex === i" >
                     <p>
                         {{project.name}}
                     </p>
-                    <div class="technologies-container">
+                    <div class="technologies-container" >
                         <!-- iterate over all technologies of each project -->
                         @for (tech of project.technologies ; track $index) {
-                        <div class="tech-img-container">
+                        <div class="tech-img-container" >
                             <img src="assets/some-technologies/{{tech}}.png" alt="">
                         </div>
                         }

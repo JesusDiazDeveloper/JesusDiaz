@@ -1,5 +1,96 @@
-.hola {
-    background-color: aqua;
-    height: 100vh;
+@import '../../../media-queries';
+@import '../../../styles.scss';
+
+
+#project-details {
     width: 100%;
+    padding-top: 100px;
+
+    small.breadcrumb {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;/* Oculta el texto que se desborda */
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se desborda */
+        cursor: pointer;
+
+        span:hover{
+            color: $primary-500;
+        }
+    }
+
+    .container {
+        margin: auto;
+
+        @media screen and (max-width : 768px) {
+            max-width: 90%;
+        }
+
+    }
+
+    h2 {
+        text-align: left;
+        margin: 0.5rem 0;
+        width: 75%;
+
+        @include desktop {
+            width: 60%;
+        }
+    }
+
+    .divider {
+        height: 3px;
+        background-color: $primary-500;
+        width: 80%;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            width: 75%;
+        }
+
+        @include desktop {
+            width: 60%;
+        }
+    }
+
+    .main-img-container {
+        width: 30%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    h4 {
+        margin-top: 3rem;
+
+    }
+
+
+    .technologies-container {
+        display: flex; 
+        flex-wrap: wrap;
+        .tech-img-container {
+            height: 2rem;
+            width: 2rem;
+            margin-right: 1rem;
+            @include tablet{
+                height: 3rem;
+                width: 3rem;
+                margin-right: 2rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .description{
+        max-width: 90%;
+    }
 }

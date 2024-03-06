@@ -1,4 +1,37 @@
-<div class="hola">
+<section id="project-details">
+    <div class="container">
 
-    <p>project-details works!</p>
-</div>
+        <small class="breadcrumb"> <a href="#projects"><span  >Projects ></span></a> {{project?.name}}</small>
+
+        <h2>
+            {{project?.name}}
+        </h2>
+        <div class="divider"></div>
+
+        <div class="main-img-container" >
+            <img src="{{project?.img}}" alt="{{project?.name}}">
+        </div>
+
+        <h4>Technologies Employed: </h4>
+        <div class="divider"></div>
+        <div class="technologies-container">
+            @for (tech of project?.technologies; track $index) {
+            <div class="tech-img-container">
+                <img src="assets/some-technologies/{{tech}}.png" alt="">
+            </div>
+            }
+        </div>
+
+        <h4>Description</h4>
+        <div class="divider"></div>
+        <p class="description">{{project?.description}}</p>
+
+        <h4>Links</h4>
+        <div class="divider"></div>
+        @for( link of project?.links ; track $index){
+        <p>{{link}}</p>
+        }
+
+    </div>
+
+</section>

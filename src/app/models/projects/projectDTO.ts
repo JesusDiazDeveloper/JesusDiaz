@@ -1,6 +1,8 @@
 export interface ProjectDTO{
-    id : number,
+    id : string,
     name : string,
     img : string,
-    technologies: string []
+    technologies: string [],
+    description: string,
+    links: string[],
 }

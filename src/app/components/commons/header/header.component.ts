@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ViewChild } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,6 +11,7 @@ import { NgClass, NgStyle } from '@angular/common';
 import { SomeTechnologiesComponent } from "../../some-technologies/some-technologies.component";
 import { ContactComponent } from "../../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
+import {MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
 
 @Component({
     selector: 'app-header',
@@ -30,7 +31,8 @@ import { FooterComponent } from "../footer/footer.component";
         SomeTechnologiesComponent,
         ContactComponent,
         FooterComponent,
-        NgClass
+        NgClass,
+        MatMenuModule
     ]
 })
 
@@ -73,5 +75,11 @@ export class HeaderComponent {
 
   closeMenu() {
     this.menuOpened=false;
+    }
+
+    @ViewChild(MatMenuTrigger) trigger!: MatMenuTrigger;
+
+    someMethod() {
+      this.trigger.openMenu();
     }
 }

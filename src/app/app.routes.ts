@@ -4,6 +4,6 @@ import { ProjectDetailsComponent } from './components/project-details/project-de
 
 export const routes: Routes = [
     {path: '' , component: HomeComponent},
-    {path : 'projects' , component: ProjectDetailsComponent},
+    {path : 'projects/:id' , component: ProjectDetailsComponent},
     {path : '**' , component: HomeComponent}
 ];

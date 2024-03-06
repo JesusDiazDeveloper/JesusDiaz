@@ -214,3 +214,16 @@ mat-sidenav-content{
   transition: all 0.3s linear;
   height: 75px;
 }
+
+.language-selector-container{
+  // background-color: aqua;
+  mat-menu#ppp{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .aa{
+    width: 1rem;
+    height: 1rem;
+  }
+  
+}
