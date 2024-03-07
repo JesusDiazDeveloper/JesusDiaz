@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -11,39 +11,42 @@ import { NgClass, NgStyle } from '@angular/common';
 import { SomeTechnologiesComponent } from "../../some-technologies/some-technologies.component";
 import { ContactComponent } from "../../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
-import {MatMenuModule, MatMenuTrigger} from '@angular/material/menu';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { CustomTranslateService } from '../../../services/custom-translate.service';
 
 @Component({
-    selector: 'app-header',
-    standalone: true,
-    templateUrl: './header.component.html',
-    styleUrl:  './header.component.scss',
-    imports: [
-        RouterOutlet,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        MatSidenavModule,
-        HeroComponent,
-        AboutComponent,
-        ProjectsComponent,
-        NgStyle,
-        SomeTechnologiesComponent,
-        ContactComponent,
-        FooterComponent,
-        NgClass,
-        MatMenuModule
-    ]
+  selector: 'app-header',
+  standalone: true,
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss',
+  imports: [
+    RouterOutlet,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    HeroComponent,
+    AboutComponent,
+    ProjectsComponent,
+    NgStyle,
+    SomeTechnologiesComponent,
+    ContactComponent,
+    FooterComponent,
+    NgClass,
+    MatMenuModule
+  ]
 })
 
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
 
   menuOpened: boolean = false;
   screenWidth: number;
-  navbarfixed : boolean = false;
-
+  navbarfixed: boolean = false;
   
+  customTranslateService: CustomTranslateService = inject(CustomTranslateService);
+  lang !:string;
+
   constructor() {
     // set screenWidth on page load
     this.screenWidth = window.innerWidth;
@@ -53,33 +56,50 @@ export class HeaderComponent {
     this.handleResize();
   }
 
-  @HostListener('window:scroll',['$event'])onScroll(){
-    if(window.scrollY > 100) {
-      this.navbarfixed=true;
+  ngOnInit(): void {
+    this.customTranslateService.getLangObservable().subscribe(
+      newLang=>this.lang=newLang
+    );
+  }
+
+  // Change the language for whole application
+  changeLang( newLang :string){
+    this.customTranslateService.changeLang(newLang);
+  }
+
+  // method to determined the change navbar styles (navbar fixed animation and height change)
+  @HostListener('window:scroll', ['$event']) onScroll() {
+    if (window.scrollY > 100) {
+      this.navbarfixed = true;
     }
-    else{
-      this.navbarfixed=false;
+    else {
+      this.navbarfixed = false;
     }
   }
 
-  // Método para manejar el redimensionamiento
+  // Método para manejar el redimensionamiento y mostrar menu lateral o navbar desktop
   private handleResize = () => {
     // set screenWidth on screen size change
     this.screenWidth = window.innerWidth;
 
     // Check if screenWidth is greater than 768 and close the menu if it's open
     if (this.screenWidth > 768) {
-      this.menuOpened = false; 
+      this.menuOpened = false;
     }
   };
 
+  //Close the hamburguer menu
   closeMenu() {
-    this.menuOpened=false;
-    }
+    this.menuOpened = false;
+  }
 
-    @ViewChild(MatMenuTrigger) trigger!: MatMenuTrigger;
 
-    someMethod() {
-      this.trigger.openMenu();
-    }
+
+
+  @ViewChild(MatMenuTrigger) trigger!: MatMenuTrigger;
+  openLanguageMenu() {
+    this.trigger.openMenu();
+  }
+
+
 }
