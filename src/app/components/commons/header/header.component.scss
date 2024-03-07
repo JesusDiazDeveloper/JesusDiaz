@@ -6,28 +6,29 @@
 }
 
 
-mat-toolbar{
+mat-toolbar {
   height: 50px;
   background-color: rgb(255, 255, 255);
   border-bottom: 3px solid $primary-500;
-  box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
+  box-shadow: 0px 3px 10px 3px rgba(25, 178, 255, 0.3);
   display: flex;
   justify-content: space-between;
 
-  @include tablet{
+  @include tablet {
     padding: 31px 32px;
     height: 100px;
   }
 
-  .mat-icon{ // material hidden class
-      min-width: 90px;
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .mat-icon {
+    // material hidden class
+    min-width: 90px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .hamburguer-menu{
+  .hamburguer-menu {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,153 +37,169 @@ mat-toolbar{
 
 
     @include laptop {
-        display: none;
+      display: none;
     }
   }
 
-  .jesus-diaz-developer{
+  .jesus-diaz-developer {
     text-shadow: 1px 3px px rgba(0, 0, 0, 0.161);
     color: black;
     font: $mob-h1;
-    span{
+
+    span {
       color: $primary-500;
     }
-    
+
   }
 
-  .desktop-nav{
+  .desktop-nav {
     font: $mob-normal;
     display: flex;
     justify-content: space-between;
-    width: auto;
-    ul.custom-ul{
+    width: 50%;
+
+    @include desktop {
+      width: 40%;
+    }
+
+    ul.custom-ul {
       padding: 0;
       display: flex;
-      justify-content: center;
-      li{
-        text-align: center;
-        padding: 4px 32px ;
-        width: 130px;
-        width: 100%; 
-        flex: 1;
+      justify-content: space-between;
+      width: 100%;
 
-        a{
+      li {
+        text-align: center;
+        width: 130px;
+        width: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
           font: $mob-normal;
+          font-size: clamp(0.9rem, 0.722rem + 0.37vw, 1rem);
           text-decoration: none;
-          
-          &:visited{
-            color :black
+
+          &:visited {
+            color: black
           }
-          &:hover{
-            padding-bottom: 5px;
-            border-bottom: 2px solid $primary-500;
+
+          &:hover {
+            text-decoration: underline;
             color: $primary-500;
             font-weight: 600;
           }
         }
 
       }
-      
+
     }
   }
 
 
-  
+
 }
 
 
 
-mat-sidenav-content{
+mat-sidenav-content {
   scroll-behavior: smooth;
   background-color: white;
 }
 
-.sidenav{
+.sidenav {
   width: 50%;
   height: 100vh;
   position: fixed;
   top: 0;
-  }
+}
 
-  .sidenav-buttons-container{
+.sidenav-buttons-container {
+  display: flex;
+  flex-direction: column;
+}
+
+div.button-container {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 3px solid $primary-500;
+  // box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+
+  mat-icon {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
-    div.button-container{ 
-      background-color: rgb(255, 255, 255);
-      border-bottom: 3px solid $primary-500;
-      // box-shadow:  0px 3px 10px 3px rgba(25, 178, 255, 0.3);
-      display: flex;
-      align-items: center;
-      padding-left: 1rem;
+  mat-icon.close-icon {
+    color: $primary-500;
+    font-size: 30px;
+    cursor: pointer;
+  }
+}
 
-      mat-icon{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+div.sidenav-menu-button {
+  //aa
 
-      mat-icon.close-icon{
-        color: $primary-500;
-        font-size: 30px;
-        cursor: pointer;
-      }
-    } 
+  height: 3em;
+  display: flex;
 
-    div.sidenav-menu-button{ //aa
+  mat-icon.sidenav-icon {
+    width: 30%;
+    height: 100%;
+    margin: 0;
+    text-align: end;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
 
-      height: 3em;
-      display: flex;
+  li {
+    list-style: none;
+    display: block;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    text-align: start;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 0 0 20px;
 
-      mat-icon.sidenav-icon{
-        width: 30%;
-        height: 100%;
-        margin: 0;
-        text-align: end;
-        display: flex;
-        justify-content: end;
-        align-items: center;
-      }
-      li{
-        list-style: none;
-        display: block;
-        width: 70% ;
-        height: 100%;
-        margin: auto;
-        text-align: start;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        padding: 0 0 0 20px ;
-
-        a{
-          text-decoration: none;
-        }
-        a:visited{
-          text-decoration: none;
-          color: inherit;
-        }
-      }
-      
-      .pContainer{
-        background-color: rosybrown;
-        width: 100%;
-      }
+    a {
+      text-decoration: none;
     }
 
+    a:visited {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .pContainer {
+    background-color: rosybrown;
+    width: 100%;
+  }
+}
 
 
-.toolbar{
-  nav{
+
+.toolbar {
+  nav {
     display: none;
+
     @include laptop {
       display: flex;
     }
+
     ul {
       display: flex;
-      
-      li{
+
+      li {
         width: 100px;
         list-style: none;
       }
@@ -190,14 +207,15 @@ mat-sidenav-content{
   }
 }
 
-.fixed{
+.fixed {
   position: fixed;
   z-index: 9999;
   top: 0;
   transition: all 0.3s linear;
   height: 50px;
 }
-.no-fixed{
+
+.no-fixed {
   height: 75px;
   position: fixed;
   z-index: 9999;
@@ -205,25 +223,28 @@ mat-sidenav-content{
   transition: all 0.3s linear;
 }
 
-.sidenav-top-button-fixed{
+.sidenav-top-button-fixed {
   height: 50px;
   transition: all 0.3s linear;
 }
 
-.sidenav-top-button-no-fixed{
+.sidenav-top-button-no-fixed {
   transition: all 0.3s linear;
   height: 75px;
 }
 
-.language-selector-container{
+.language-selector-container {
   // background-color: aqua;
-  mat-menu#ppp{
+
+  mat-menu #ppp {
     display: flex !important;
     flex-direction: column !important;
+
   }
-  .aa{
+
+  .aa {
     width: 1rem;
     height: 1rem;
   }
-  
+
 }
