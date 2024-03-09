@@ -45,6 +45,8 @@ mat-toolbar {
     text-shadow: 1px 3px px rgba(0, 0, 0, 0.161);
     color: black;
     font: $mob-h1;
+    font-size: clamp(1rem, 0.375rem + 3.333vw, 2rem);
+
 
     span {
       color: $primary-500;
@@ -52,12 +54,24 @@ mat-toolbar {
 
   }
 
+  .anchor_jesus-diaz-developer {
+    order: 1;
+    @include laptop{
+      order: 0;
+    }
+  }
+
   .desktop-nav {
     font: $mob-normal;
-    display: flex;
+    display: flex; // aca
     justify-content: space-between;
-    width: 50%;
+    justify-content: end;
+    width: 60%;
+    order: 0;
 
+    @include laptop{
+      justify-content: space-between;
+    }
     @include desktop {
       width: 40%;
     }
@@ -67,15 +81,23 @@ mat-toolbar {
       display: flex;
       justify-content: space-between;
       width: 100%;
+      display: none;
+
+
+      @include laptop {
+        display: flex;
+      }
 
       li {
         text-align: center;
-        width: 130px;
-        width: 100%;
+        // width: 130px;
+        // width: 100%;
         flex: 1;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100px;
+        list-style: none;
 
         a {
           font: $mob-normal;
@@ -95,6 +117,20 @@ mat-toolbar {
 
       }
 
+    }
+
+    .language_selector_container {
+      // background-color: aqua;
+      mat-menu #ppp {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    
+      .aa {
+        width: 1rem;
+        height: 1rem;
+      }
+    
     }
   }
 
@@ -187,26 +223,6 @@ div.sidenav-menu-button {
 }
 
 
-
-.toolbar {
-  nav {
-    display: none;
-
-    @include laptop {
-      display: flex;
-    }
-
-    ul {
-      display: flex;
-
-      li {
-        width: 100px;
-        list-style: none;
-      }
-    }
-  }
-}
-
 .fixed {
   position: fixed;
   z-index: 9999;
@@ -233,18 +249,3 @@ div.sidenav-menu-button {
   height: 75px;
 }
 
-.language-selector-container {
-  // background-color: aqua;
-
-  mat-menu #ppp {
-    display: flex !important;
-    flex-direction: column !important;
-
-  }
-
-  .aa {
-    width: 1rem;
-    height: 1rem;
-  }
-
-}

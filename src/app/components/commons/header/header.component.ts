@@ -13,6 +13,7 @@ import { ContactComponent } from "../../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
 import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { CustomTranslateService } from '../../../services/custom-translate.service';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -33,7 +34,8 @@ import { CustomTranslateService } from '../../../services/custom-translate.servi
     ContactComponent,
     FooterComponent,
     NgClass,
-    MatMenuModule
+    MatMenuModule,
+    TranslateModule
   ]
 })
 

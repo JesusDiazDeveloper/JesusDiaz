@@ -1,14 +1,23 @@
 <section id="project-details">
     <div class="container">
 
-        <small class="breadcrumb"> <a href="#projects"><span  >Projects ></span></a> {{project?.name}}</small>
+        <small class="breadcrumb">
+                <a href="#projects" >
+                    <span class="icon-text-container">
+                        <mat-icon class="reply_icon">reply</mat-icon>
+                        <span class="text">{{"projects_details.breadcrumb" | translate}}</span>
+                    </span>
+                </a>
+                <mat-icon class="keyboard_arrow_right">keyboard_arrow_right</mat-icon>
+            <small class="breadcrumb_project_name">{{project?.name}}</small>
+        </small>
 
         <h2>
             {{project?.name}}
         </h2>
         <div class="divider"></div>
 
-        <div class="main-img-container" >
+        <div class="main-img-container">
             <img src="{{project?.img}}" alt="{{project?.name}}">
         </div>
 

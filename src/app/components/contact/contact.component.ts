@@ -4,14 +4,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactServiceService } from '../../services/contact-service.service';
-import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 import { JsonPipe } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe],
+  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe,TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

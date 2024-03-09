@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Card } from '../../models/some-technologies/card';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-some-technologies',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './some-technologies.component.html',
   styleUrl: './some-technologies.component.scss'
 })

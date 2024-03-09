@@ -67,6 +67,7 @@
                 font:$hero-header;
                 line-height: 1.8rem;
                 font-weight: bold;
+                // color: aqua;
                 font-size: clamp(1rem, 0.313rem + 3.055vw, 3.062rem);
                 @include tablet{
                     line-height: 2rem;
@@ -78,9 +79,10 @@
                 @include desktop{
                     line-height: 3rem;
                 }
-                span{
-                    color: $primary-500;
-                }
+                
+            }
+            span{
+                color: $primary-500;
             }
             
             .img-solo-mobole{
@@ -100,6 +102,10 @@
                 }
 
                 @include laptop{
+                    gap: clamp(1rem, -0.778rem + 3.704vw, 2rem);
+                }
+
+                @include desktop{
                     gap: 2rem;
                 }
 

@@ -7,15 +7,47 @@
     padding-top: 100px;
 
     small.breadcrumb {
-        display: inline-block;
+        display: flex;
+        height: 2rem;
+        align-items: center;
         width: 100%;
-        overflow: hidden;/* Oculta el texto que se desborda */
-        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-        text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se desborda */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
         cursor: pointer;
 
-        span:hover{
+
+        .breadcrumb_project_name {
+            display: inline;
+        }
+
+        .icon-text-container {
+            display: flex;
+            align-items: center;
+            height: auto;
+            
+            width: fit-content;
+        }
+
+        .reply_icon {
+            font-size: 1.3rem;
+        }
+
+        .text {
+            margin-left: 5px;
+            /* Añade un espacio entre el icono y el texto */
+        }
+
+        .icon-text-container:hover {
             color: $primary-500;
+        }
+
+        .keyboard_arrow_right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+            font-size: 1.1rem;
         }
     }
 
@@ -71,13 +103,15 @@
 
 
     .technologies-container {
-        display: flex; 
+        display: flex;
         flex-wrap: wrap;
+
         .tech-img-container {
             height: 2rem;
             width: 2rem;
             margin-right: 1rem;
-            @include tablet{
+
+            @include tablet {
                 height: 3rem;
                 width: 3rem;
                 margin-right: 2rem;
@@ -90,7 +124,8 @@
             }
         }
     }
-    .description{
+
+    .description {
         max-width: 90%;
     }
 }

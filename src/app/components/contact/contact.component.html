@@ -1,34 +1,34 @@
 <section id="contact">
-    <h2>Let's Contact</h2>
+    <h2>{{"home.contact.title" | translate}}</h2>
 
     <form (ngSubmit)="send()" [formGroup]="form" class="form-container">
 
         <div class="mb-3 custom-input">
-            <label class="form-label">Name</label>
+            <label class="form-label">{{"home.contact.name" | translate}}</label>
             <input type="text" name="name" required formControlName="from_name" 
                 class="form-control">
         </div>
         <div class="mb-3 custom-input">
             <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-            <label class="form-label">Email address</label>
+            <label class="form-label">{{"home.contact.email_address" | translate}}</label>
             <input type="email" name="email" formControlName="from_email" required
                 class="form-control">
         </div>
         <div class="mb-3 custom-input">
-            <label class="form-label">Subject</label>
+            <label class="form-label">{{"home.contact.subject" | translate}}</label>
             <input type="text" name="subject" required formControlName="subject" 
                 class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
 
         <div class="mb-3 custom-input">
-            <label class="form-label">Message</label>
+            <label class="form-label">{{"home.contact.message" | translate}}</label>
 
             <textarea name="description" formControlName="message" required class="form-control" 
                 rows="4">
         </textarea>
         </div>
 
-        <button type="submit" class="primary-button">Send</button>
+        <button type="submit" class="primary-button">{{"home.contact.btn_send" | translate}}</button>
     </form>
 
     

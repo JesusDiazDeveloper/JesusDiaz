@@ -2,11 +2,11 @@
 <section   class="hero-section" id="hero" > 
     <div class="hero-container">
         <div class="hero-text">
-            <h1>Hi, My name is Jesus {{ "home.hero.greeting" | translate}}<br>
-                and i’m<br>
-                <span>FullStack Web Developer</span><br>
-                &<br>
-                <span>UX-UI Dessigner</span>
+            <h1>{{ "home.hero.greeting.hi" | translate}}<br>
+                {{ "home.hero.greeting.and" | translate}}<br>
+                <span>{{ "home.hero.greeting.fullstack" | translate}}</span><br>
+                {{ "home.hero.greeting.&" | translate}}<br>
+                <span>{{ "home.hero.greeting.ux-ui" | translate}}</span>
             </h1>
 
             <figure class="img-solo-mobole">
@@ -16,11 +16,11 @@
 
             <div class="buttons-container">
                 <a href="#contact">
-                    <button class="primary-button">Contact</button>
+                    <button class="primary-button">{{ "home.hero.btn_contact" | translate}}</button>
                 </a>
                 <!-- TODO: put an spinner here -->
                 <a href="https://drive.google.com/uc?export=download&id=16BilJl9JFEWigMLp_iaYZ3Quusz4T8Eb">
-                    <button class="primary-button">Download CV</button>
+                    <button class="primary-button">{{ "home.hero.btn_download_cv" | translate}}</button>
                 </a> 
             </div>
         </div>

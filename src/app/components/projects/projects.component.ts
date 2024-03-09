@@ -5,13 +5,14 @@ import { ProjectDTO } from '../../models/projects/projectDTO';
 import { PrimaryButtonComponent } from "../commons/buttons/primary-button/primary-button.component";
 import { Router } from '@angular/router';
 import { ProjectsService } from '../../services/projects.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-projects',
     standalone: true,
     templateUrl: './projects.component.html',
     styleUrls: ['./projects.component.scss', './additional.scss'],
-    imports: [CarouselModule, TagModule, PrimaryButtonComponent]
+    imports: [CarouselModule, TagModule, PrimaryButtonComponent, TranslateModule]
 })
 export class ProjectsComponent  implements OnInit{
     
