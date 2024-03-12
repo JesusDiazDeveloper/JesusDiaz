@@ -4,11 +4,13 @@ import { ProjectDTO } from '../../models/projects/projectDTO';
 import { ProjectsService } from '../../services/projects.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
+import { CustomTranslateService } from '../../services/custom-translate.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [TranslateModule,MatIconModule],
+  imports: [TranslateModule,MatIconModule,CommonModule],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss'
 })
@@ -18,16 +20,18 @@ export class ProjectDetailsComponent implements OnInit {
   projectId !: string;
   project !: ProjectDTO | null;
   projectService = inject(ProjectsService);
-
-
+  customTranslateService = inject (CustomTranslateService); 
+  lang !: string;
 
   ngOnInit(): void {
     this.router.params.subscribe(params => {
       this.projectId = params['id'];
       console.log(" this.projectId: " + this.projectId);
       this.project = this.projectService.getById(params['id']);
-      console.log("this.project: + " +  this.project);
 
+      this.customTranslateService.getLangObservable().subscribe(newLang=>{
+        this.lang = newLang;
+      })
     })
 
     console.log(this.project);

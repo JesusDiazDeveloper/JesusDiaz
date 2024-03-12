@@ -5,7 +5,7 @@
 #project-details {
     width: 100%;
     padding-top: 100px;
-
+    margin-bottom: 6rem;
     small.breadcrumb {
         display: flex;
         height: 2rem;
@@ -127,5 +127,24 @@
 
     .description {
         max-width: 90%;
+    }
+
+    .links_container{
+        height: 2rem;
+        .icon_container{
+            display: inline-block;
+            width: 2rem;
+        }
+        img{
+            max-height: 1.8rem;
+            margin-right: .8rem;
+        }
+        a{
+            color: $primary-500;
+            font-weight: 500;
+        }
+        a:hover{
+            color: $primary-600;
+        }
     }
 }

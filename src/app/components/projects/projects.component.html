@@ -8,12 +8,12 @@
                 <ng-template let-project pTemplate="item">
                     <div class="card-container" (mouseover)="showOverlay(project.id)" (mouseleave)="hideOverlay()" (click)="navigateToDetail(project.id)">
 
-                        <img src="{{project.img}}" alt="{{project.name}}" class="img-car" />
-
+                        <img src="{{project.img}}"  alt="{{project.name}}" class="img-car" />
 
                         <div class="hover-info" [class.show]="showOverlayIndex == project.id">
+                            
                             <p>
-                                {{project.name}}
+                                {{lang === 'es' ? project.name.es : project.name.en}}
                             </p>
                             <div class="technologies-container">
                                 <!-- iterate over all technologies of each project -->
@@ -36,11 +36,11 @@
             @for (project of projects; track project.name ; let i = $index) {
             <div class="grid-card-container" (mouseover)="showOverlay(i)" (mouseleave)="hideOverlay()" (click)="navigateToDetail(project.id)" >
 
-                <img src="{{project.img}}" alt="{{project.name}}">
+                <img src="{{project.img}}" alt="{{lang === 'es' ? project.name.es : project.name.en}}">
 
                 <div class="hover-info" [class.show]="showOverlayIndex === i" >
                     <p>
-                        {{project.name}}
+                        {{lang === 'es' ? project.name.es : project.name.en}}
                     </p>
                     <div class="technologies-container" >
                         <!-- iterate over all technologies of each project -->

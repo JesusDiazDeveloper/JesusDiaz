@@ -12,7 +12,8 @@
     "home":{
         "hero":{
             "greeting":{
-                "hi": "Hi, My name is Jesus",
+                "hi": "Hi,",
+                "my_name" : "My name is Jesus",
                 "and": " and i’m",
                 "fullstack": "FullStack Web Developer",
                 "&": "&",
