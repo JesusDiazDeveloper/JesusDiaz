@@ -1,0 +1,70 @@
+{
+    "header.desktop_nav.home": "Inicio",
+    "header": {
+        "desktop_nav": {
+            "btn_language_selector": "elige el idioma que deseas utilizar",
+            "home": "Inicio",
+            "projects": "Proyectos",
+            "technologies": "Tecnologías",
+            "about": "Acerca de"
+        }
+    },
+    "home": {
+        "hero": {
+            "greeting": {
+                "hi": "Hola,",
+                "my_name" : "Mi nombre es Jesús",
+                "and": " y soy",
+                "fullstack": "Desarrollador Web FullStack",
+                "&": "y",
+                "ux-ui": "Diseñador UX-UI"
+            },
+            "btn_contact": "Contacto",
+            "btn_download_cv": "Descargar CV"
+        },
+        "about": {
+            "title": "Déjame contarte algo sobre mí",
+            "phrase_1": "¡Hola! Soy un apasionado desarrollador Full Stack con experiencia en el desarrollo de aplicaciones web desde cero hasta su implementación.",
+            "phrase_2": "Mi enfoque va más allá del código; también tengo estudios especializados en UX/UI, lo que me permite crear experiencias de usuario intuitivas y atractivas.",
+            "phrase_3": "Con habilidades tanto en el front-end como en el back-end, estoy listo para enfrentar cualquier desafío de desarrollo y diseñar soluciones que no solo funcionen bien, sino que también deleiten a los usuarios.",
+            "phrase_4": "Estoy emocionado de colaborar en proyectos que combinen lo mejor de la funcionalidad y el diseño para ofrecer experiencias digitales excepcionales."
+        },
+        "some_technologies": {
+            "title": "Algunas de las tecnologías con las que trabajo son..."
+        },
+        "projects": {
+            "title": "Proyectos",
+            "btn_see_more": "ver más"
+        },
+        "contact": {
+            "title": "Contáctame",
+            "name": "Nombre",
+            "email_address": "Dirección de correo electrónico",
+            "subject": "Asunto",
+            "message": "Mensaje",
+            "btn_send": "Enviar"
+        }
+    },
+    "footer": {
+        "useful_links": {
+            "title": "Enlaces Útiles",
+            "home": "Inicio",
+            "about": "Acerca de",
+            "projects": "Proyectos",
+            "contact": "Contacto"
+        },
+        "networks": {
+            "title": "Redes"
+        },
+        "address": {
+            "title": "Dirección"
+        },
+        "copyright": {
+            "title": "&copy; 2024 Jesus Diaz Dev. Todos los derechos reservados."
+        }
+    },
+    "projects_details":{
+        "back" : "Regresar",
+        "breadcrumb" : "Proyectos"
+    }
+}

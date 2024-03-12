@@ -1,0 +1,71 @@
+{
+    "header.desktop_nav.home" : "Home",
+    "header":{
+        "desktop_nav": {
+            "btn_language_selector": "choose the language you want to use",
+            "home" : "Home",
+            "projects": "Projects",
+            "technologies": "Technologies",
+            "about": "About"
+        }
+    },
+    "home":{
+        "hero":{
+            "greeting":{
+                "hi": "Hi,",
+                "my_name" : "My name is Jesus",
+                "and": " and i’m",
+                "fullstack": "FullStack Web Developer",
+                "&": "&",
+                "ux-ui": "UX-UI Dessigner"
+            } ,
+            "btn_contact": "Contact",
+            "btn_download_cv": "Download CV"
+        },
+        "about":{
+            "title": "Let me tell you something of me",
+            "phrase_1": "Hello! I'm a passionate Full Stack developer with experience in developing web applications from scratch to deployment.",
+            "phrase_2": "My focus goes beyond the code; I also have specialized studies in UX/UI, allowing me to create intuitive and engaging user experiences.",
+            "phrase_3": "With skills in both front-end and back-end, I'm ready to tackle any development challenge and design solutions that not only work well but also delight users.",
+            "phrase_4": "I'm excited to collaborate on projects that combine the best of functionality and design to deliver exceptional digital experiences."
+
+        },
+        "some_technologies":{
+            "title": "Some of the technologies I work with are..."
+        },
+        "projects":{
+            "title": "Projects",
+            "btn_see_more": "see more"
+        },
+        "contact":{
+            "title":"Let's Contact",
+            "name": "Name",
+            "email_address": "Email address",
+            "subject": "Subject",
+            "message": "Message",
+            "btn_send": "Send"
+        }
+    },
+    "footer":{
+        "useful_links":{
+            "title": "Useful Links",
+            "home": "Home",
+            "about": "About",
+            "projects": "Projects",
+            "contact": "Contact"
+        },
+        "networks":{
+            "title":"Networks"
+        },
+        "address":{
+            "title":"Address"
+        },
+        "copyright":{
+            "title": "&copy; 2024 Jesus Diaz Dev. All rights reserved."
+        }
+    },
+    "projects_details":{
+        "back" : "Back",
+        "breadcrumb" : "Projects"
+    }
+}
