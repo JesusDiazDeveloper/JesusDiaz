@@ -26,7 +26,6 @@ export class ProjectDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.router.params.subscribe(params => {
       this.projectId = params['id'];
-      console.log(" this.projectId: " + this.projectId);
       this.project = this.projectService.getById(params['id']);
 
       this.customTranslateService.getLangObservable().subscribe(newLang=>{
@@ -34,7 +33,6 @@ export class ProjectDetailsComponent implements OnInit {
       })
     })
 
-    console.log(this.project);
   }
   
 }

@@ -1,7 +1,7 @@
 <section id="contact">
     <h2>{{"home.contact.title" | translate}}</h2>
 
-    <form (ngSubmit)="send()" [formGroup]="form" class="form-container">
+    <form (ngSubmit)="send()" [formGroup]="getForm()" class="form-container">
 
         <div class="mb-3 custom-input">
             <label class="form-label">{{"home.contact.name" | translate}}</label>

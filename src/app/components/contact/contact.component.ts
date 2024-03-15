@@ -6,23 +6,28 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 import { ContactServiceService } from '../../services/contact-service.service';
 import { JsonPipe } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
+import { EmailJSResponseStatus } from '@emailjs/browser';
 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe,TranslateModule],
+  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
-  
+
 
   private service = inject(ContactServiceService);
   private fb = inject(FormBuilder);
 
-  form: FormGroup = this.fb.group({
+
+
+
+
+  private form: FormGroup = this.fb.group({
     from_name: '',
     to_name: '',
     from_email: '',
@@ -30,13 +35,17 @@ export class ContactComponent {
     message: '',
   });
 
+  getForm() {
+    return this.form;
+  }
+
   async send() {
 
     if (this.form.invalid) {
       // Si el formulario no es válido, detener el envío y mostrar un mensaje de error
       alert("Please fill out all fields before submitting.");
       return;
-  }
+    }
 
     let data = {
       from_name: this.form.value.from_name,
@@ -47,19 +56,18 @@ export class ContactComponent {
     }
 
     try {
-      const response = await this.service.send(data);
-      if (response) {
-        console.log(response);
+      const  response   = <EmailJSResponseStatus> await this.service.send(data);
+      if (response.status === 200) {
         // TODO:  create Modal
-        alert("Message has been sent succesfully"); 
+        alert("Message has been sent succesfully");
         this.form.reset();
       }
       else {
-         // TODO:  create Modal
-        alert("There was an error, try again later");
+        // TODO:  create Modal
+        alert("There was an error, try again later, \n the status was: " + response.status + ", " + response.text);
       }
     } catch (error) {
-       // TODO:  create Modal
+      // TODO:  create Modal
       alert("There was an error, try again later");
     }
   }
