@@ -1,6 +1,6 @@
-<section id="project-details">
+<section id="project-details" #scrollElement>
     @if(this.project != null){
-    <div class="container">
+    <div class="container"  >
         <small class="breadcrumb">
             <a href="#projects">
                 <span class="icon-text-container">
@@ -21,7 +21,7 @@
             <img src="{{project.img}}" alt="{{lang === 'es' ? project.name.es : project.name.en}}">
         </div>
 
-        <h4>Technologies Employed: </h4>
+        <h4> {{"projects_details.technologies_employed" | translate}} </h4>
         <div class="divider"></div>
         <div class="technologies-container">
             @for (tech of project.technologies; track $index) {
@@ -31,7 +31,7 @@
             }
         </div>
 
-        <h4>Description</h4>
+        <h4>{{"projects_details.description" | translate}}</h4>
         <div class="divider"></div>
         <p class="description">
             
@@ -52,7 +52,7 @@
                 <div class="icon_container">
                     <img src="../../../assets/icons/{{item.key}}.svg" alt="{{item.key}} icon"> 
                 </div>
-                <span>visita el proyecto en: </span><a href="{{item.value}}" target="_blank">{{item.key}}</a>
+                <span>{{"projects_details.visit_the_proyect" | translate}}</span><a href="{{item.value}}" target="_blank">{{item.key}}</a>
             </div>
         }
 

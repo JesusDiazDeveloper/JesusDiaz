@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectDTO } from '../../models/projects/projectDTO';
 import { ProjectsService } from '../../services/projects.service';
@@ -32,7 +32,18 @@ export class ProjectDetailsComponent implements OnInit {
         this.lang = newLang;
       })
     })
+  }
 
+  @ViewChild('scrollElement') scrollElement!: ElementRef;
+  
+  ngAfterViewInit(): void {
+    this.scrollToTop();
+  }
+
+  scrollToTop() {
+    if (this.scrollElement && this.scrollElement.nativeElement) {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
   }
   
 }

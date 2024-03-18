@@ -66,6 +66,9 @@
     },
     "projects_details":{
         "back" : "Back",
-        "breadcrumb" : "Projects"
+        "breadcrumb" : "Projects",
+        "technologies_employed": "Technologies Employed: ",
+        "description": "Description: ",
+        "visit_the_proyect": "visit the proyect on: "
     }
 }
