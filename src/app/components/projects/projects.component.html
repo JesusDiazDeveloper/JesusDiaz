@@ -8,7 +8,7 @@
                 <ng-template let-project pTemplate="item">
                     <div class="card-container" (mouseover)="showOverlay(project.id)" (mouseleave)="hideOverlay()" (click)="navigateToDetail(project.id)">
 
-                        <img src="{{project.img}}"  alt="{{project.name}}" class="img-car" />
+                        <img src="{{project.img}}"  alt="{{project.name}}" class="img-card" />
 
                         <div class="hover-info" [class.show]="showOverlayIndex == project.id">
                             
