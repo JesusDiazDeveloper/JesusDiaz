@@ -1,35 +1,47 @@
 <section id="contact">
     <h2>{{"home.contact.title" | translate}}</h2>
 
-    <form (ngSubmit)="send()" [formGroup]="getForm()" class="form-container">
-
-        <div class="mb-3 custom-input">
+    <form (ngSubmit)="send()" [formGroup]="this.form" class="form-container">
+        <!-- People's name -->
+        <div class="mt-3 custom-input">
             <label class="form-label">{{"home.contact.name" | translate}}</label>
-            <input type="text" name="name" required formControlName="from_name" 
-                class="form-control">
+            <input type="text" formControlName="from_name" required class="form-control"
+                [ngClass]="{ 'is-invalid': hasErrors('from_name', 'required') }">
         </div>
-        <div class="mb-3 custom-input">
-            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        <div *ngIf="hasErrors('from_name', 'required')" class="warning-text">{{ "home.contact.error_message.name_required"|translate}}</div>
+
+        <!-- People's email -->
+        <div class="mt-3 custom-input">
             <label class="form-label">{{"home.contact.email_address" | translate}}</label>
-            <input type="email" name="email" formControlName="from_email" required
-                class="form-control">
+            <input type="email" formControlName="from_email" required email class="form-control" 
+            [ngClass]="{   'is-invalid':   
+            hasErrors('from_email', 'required') || 
+                                                    hasErrors('from_email', 'email') }">
         </div>
-        <div class="mb-3 custom-input">
+        <div *ngIf="hasErrors('from_email', 'required')" class="warning-text">{{ "home.contact.error_message.email_required"|translate}}</div>
+        <div *ngIf="hasErrors('from_email', 'email')" class="warning-text">debe ingresar un mail valido</div>
+
+
+        <!-- Subject -->    
+        <div class="mt-3 custom-input">
             <label class="form-label">{{"home.contact.subject" | translate}}</label>
-            <input type="text" name="subject" required formControlName="subject" 
-                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" formControlName="subject" required class="form-control"
+                [ngClass]="{    'is-invalid':   hasErrors('subject', 'required') }">
+        </div>
+        <div *ngIf="hasErrors('subject', 'required')" class="warning-text">{{ "home.contact.error_message.subject_required"|translate}}
         </div>
 
-        <div class="mb-3 custom-input">
+        <!-- Message -->
+        <div class="mt-3 mb-3 custom-input">
             <label class="form-label">{{"home.contact.message" | translate}}</label>
+            <textarea rows="4" formControlName="message" required class="form-control"
+                [ngClass]="{    'is-invalid':   hasErrors('message', 'required') }">
 
-            <textarea name="description" formControlName="message" required class="form-control" 
-                rows="4">
-        </textarea>
+        </textarea >
+            <div *ngIf="hasErrors('message', 'required')" class="warning-text">{{ "home.contact.error_message.message_required"|translate}}</div>
         </div>
-
-        <button type="submit" class="primary-button">{{"home.contact.btn_send" | translate}}</button>
+        <button [ngClass]="{'primary_button_disabled' : !this.form.valid}" [disabled]="!this.form.valid" type="submit" class="primary-button">{{"home.contact.btn_send" | translate}}</button>
     </form>
 
-    
+
 </section>

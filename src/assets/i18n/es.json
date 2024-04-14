@@ -42,7 +42,15 @@
             "email_address": "Dirección de correo electrónico",
             "subject": "Asunto",
             "message": "Mensaje",
-            "btn_send": "Enviar"
+            "btn_send": "Enviar",
+            "error_message": 
+                {
+                    "name_required": "Por favor, introduce tu nombre",
+                    "email_required": "Por favor, introduce tu correo electrónico",
+                    "email_format": "Por favor, introduce un mail válido",
+                    "subject_required": "Por favor, introduce un asunto",
+                    "message_required": "Por favor, introduce tu mensaje"
+                }
         }
     },
     "footer": {

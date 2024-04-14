@@ -115,6 +115,7 @@ $btn-shadow : 1px,
 rgb(0, 0, 0, 0.25);
 
 
+
 a {
   text-decoration: none;
 
@@ -208,3 +209,19 @@ h4{
   box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.283);
   background-image: linear-gradient(160deg, #2dacec 20%, #046efa 150%); /* Mantén el gradiente original */
 }
+
+.primary_button_disabled{
+  background-image: none; 
+  background-color: #eee; 
+  cursor: not-allowed;
+  color: #ababab;
+  border: 2px solid #ababab;
+}
+
+.primary_button_disabled:hover{
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.283);
+  background-image: none; 
+  background-color: #eee; 
+
+}
+

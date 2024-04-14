@@ -121,6 +121,8 @@ mat-toolbar {
 
     .language_selector_container {
       // background-color: aqua;
+      display: flex;
+      align-items: center;
       mat-menu #ppp {
         display: flex !important;
         flex-direction: column !important;

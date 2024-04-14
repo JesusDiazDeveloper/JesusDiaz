@@ -3,15 +3,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { NgClass, NgStyle } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeroComponent } from '../../hero/hero.component';
 import { AboutComponent } from "../../about/about.component";
 import { ProjectsComponent } from "../../projects/projects.component";
-import { NgClass, NgStyle } from '@angular/common';
 import { SomeTechnologiesComponent } from "../../some-technologies/some-technologies.component";
 import { ContactComponent } from "../../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
-import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { CustomTranslateService } from '../../../services/custom-translate.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 

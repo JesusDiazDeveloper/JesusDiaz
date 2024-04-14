@@ -43,7 +43,16 @@
             "email_address": "Email address",
             "subject": "Subject",
             "message": "Message",
-            "btn_send": "Send"
+            "btn_send": "Send",
+            "error_message": 
+                {
+                    "name_required": "Please enter your name",
+                    "email_required": "Please enter your email address",
+                    "email_format": "Please enter a valid email",
+                    "subject_required": "Please enter a subject",
+                    "message_required": "Please enter your message"
+                }
+
         }
     },
     "footer":{

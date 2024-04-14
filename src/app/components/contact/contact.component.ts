@@ -1,10 +1,10 @@
-import { Component, inject, } from '@angular/core';
+import { Component, OnInit, inject, } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactServiceService } from '../../services/contact-service.service';
-import { JsonPipe } from '@angular/common';
+import { CommonModule, JsonPipe, NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { EmailJSResponseStatus } from '@emailjs/browser';
 
@@ -12,32 +12,22 @@ import { EmailJSResponseStatus } from '@emailjs/browser';
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe, TranslateModule],
+  imports: [CommonModule,MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe, TranslateModule,NgClass],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
-
-
   private service = inject(ContactServiceService);
   private fb = inject(FormBuilder);
 
-
-
-
-
-  private form: FormGroup = this.fb.group({
+  form: FormGroup = this.fb.group({
     from_name: '',
     to_name: '',
     from_email: '',
     subject: '',
     message: '',
   });
-
-  getForm() {
-    return this.form;
-  }
 
   async send() {
 
@@ -56,7 +46,7 @@ export class ContactComponent {
     }
 
     try {
-      const  response   = <EmailJSResponseStatus> await this.service.send(data);
+      const response = <EmailJSResponseStatus>await this.service.send(data);
       if (response.status === 200) {
         // TODO:  create Modal
         alert("Message has been sent succesfully");
@@ -70,6 +60,13 @@ export class ContactComponent {
       // TODO:  create Modal
       alert("There was an error, try again later");
     }
+  }
+
+  
+
+  
+  hasErrors(controlName: string, errorType: string) {
+    return this.form.get(controlName)?.hasError(errorType) && this.form.get(controlName)?.touched
   }
 }
 
