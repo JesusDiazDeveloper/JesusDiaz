@@ -57,7 +57,7 @@ export class ProjectsService {
         en: ["This project focuses on applying advanced CSS techniques such as Parallax, transitions, and effects, along with the use of Sprite Sheets, to enhance the user's visual experience on a landing page designed for a game based on Spidey characters. Additionally, JavaScript was extensively utilized, delving into its usage to add interactivity and dynamic functionality to the site. The combination of these techniques and tools provides a visually appealing and highly functional experience for users, contributing to increased attractiveness and engagement on the game website."]
       },
       links: {
-        netlify: "https://interfaces-de-usuario-2023.netlify.app/tp4",
+        netlify: "https://interfaces-2023.netlify.app/tp4",
       }
       ,
     },
@@ -93,7 +93,7 @@ export class ProjectsService {
         en: ["exciting game developed using HTML, CSS, and JavaScript, with a focus on Object-Oriented Programming (OOP). Through the integration of the Canva platform, we meticulously designed custom tokens and boards, along with implementing the game logic. This project represents a gaming website, with the highlighted title being the classic strategy game 'Connect 4', featuring the beloved characters from The Simpsons, Tommy and Dally."]
       },
       links: {
-        netlify: "https://interfaces-de-usuario-2023.netlify.app/tp3",
+        netlify: "https://interfaces-2023.netlify.app/tp3",
       }
       ,
     },
@@ -133,7 +133,7 @@ export class ProjectsService {
         en: ["Before diving into the code, I understood the importance of establishing a solid visual design for my project. Through this experience, I developed my own Design System to create a website from scratch. This project gave me a deep understanding of the organized and effective design process. We began by sketching our ideas on paper, iteratively designing the user interfaces. Then, we moved on to creating wireframes to visualize the site's structure and navigation. Finally, we carried out high-fidelity design to ensure our visions were accurately materialized. Highlight the use of the Figma tool in this process, which I delved into deeply. I completed various courses and obtained certifications, as I greatly enjoy this aspect of design. Figma not only facilitated the creation of high-quality designs but also promoted collaboration and effective communication within the team. This project not only allowed me to enhance my design skills but also laid the groundwork for more efficient and user-centered web development."]
       },
       links: {
-        netlify: "https://interfaces-de-usuario-2023.netlify.app/tp2",
+        netlify: "https://interfaces-2023.netlify.app/tp2",
       }
       ,
     },
