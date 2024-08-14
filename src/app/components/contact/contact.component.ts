@@ -7,16 +7,18 @@ import { ContactServiceService } from '../../services/contact-service.service';
 import { CommonModule, JsonPipe, NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { EmailJSResponseStatus } from '@emailjs/browser';
+import { CustomModalComponent } from "../commons/custom-modal/custom-modal.component";
 
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule,MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe, TranslateModule,NgClass],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
+  imports: [CommonModule, MatFormFieldModule, MatSelectModule, MatInputModule, FormsModule, ReactiveFormsModule, JsonPipe, TranslateModule, NgClass, CustomModalComponent]
 })
 export class ContactComponent {
+
 
   private service = inject(ContactServiceService);
   private fb = inject(FormBuilder);
@@ -29,11 +31,14 @@ export class ContactComponent {
     message: '',
   });
 
+  sendWithoutErrors!: boolean;
+  success_message: boolean = false;
+  there_was_an_error!: boolean;
+
   async send() {
 
     if (this.form.invalid) {
-      // Si el formulario no es válido, detener el envío y mostrar un mensaje de error
-      alert("Please fill out all fields before submitting.");
+      this.success_message = true;
       return;
     }
 
@@ -48,23 +53,24 @@ export class ContactComponent {
     try {
       const response = <EmailJSResponseStatus>await this.service.send(data);
       if (response.status === 200) {
-        // TODO:  create Modal
-        alert("Message has been sent succesfully");
+        this.success_message = true;
         this.form.reset();
       }
       else {
-        // TODO:  create Modal
-        alert("There was an error, try again later, \n the status was: " + response.status + ", " + response.text);
+        this.there_was_an_error = true;
+        this.form.reset();
       }
     } catch (error) {
-      // TODO:  create Modal
-      alert("There was an error, try again later");
+      this.there_was_an_error = true;
     }
   }
 
-  
 
-  
+  closeModal() {
+    this.success_message = false;
+    this.there_was_an_error = false;
+  }
+
   hasErrors(controlName: string, errorType: string) {
     return this.form.get(controlName)?.hasError(errorType) && this.form.get(controlName)?.touched
   }

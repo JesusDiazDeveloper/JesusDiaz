@@ -23,11 +23,11 @@
             "btn_download_cv": "Descargar CV"
         },
         "about": {
-            "title": "Déjame contarte algo sobre mí",
-            "phrase_1": "¡Hola! Soy un apasionado desarrollador Full Stack con experiencia en el desarrollo de aplicaciones web desde cero hasta su implementación.",
-            "phrase_2": "Mi enfoque va más allá del código; también tengo estudios especializados en UX/UI, lo que me permite crear experiencias de usuario intuitivas y atractivas.",
-            "phrase_3": "Con habilidades tanto en el front-end como en el back-end, estoy listo para enfrentar cualquier desafío de desarrollo y diseñar soluciones que no solo funcionen bien, sino que también deleiten a los usuarios.",
-            "phrase_4": "Estoy emocionado de colaborar en proyectos que combinen lo mejor de la funcionalidad y el diseño para ofrecer experiencias digitales excepcionales."
+            "title": "Te cuento algo sobre mí",
+            "phrase_1": "¡Hola! ¿Cómo estás? Mi nombre es Jesús y soy un desarrollador Full Stack con experiencia en el desarrollo de aplicaciones web desde cero hasta su implementación.",
+            "phrase_2": "Gracias a mi formacion universitaria, mi enfoque va más allá del código: tengo estudios especializados en UX/UI que me permiten crear experiencias de usuario agradables e intuitivas.",
+            "phrase_3": "En mi trabajo actual como Desarrollador Angular, me dedico a implementar soluciones eficientes y atractivas para mis clientes, priorizando la experiencia de usuario y un diseño personalizado.",
+            "phrase_4": "Te gustaria saber mas? Explora mi portfolio y mis proyectos, y no dudes en contactarme mediante el formulario que encontraras un poco mas abajo!"
         },
         "some_technologies": {
             "title": "Algunas de las tecnologías con las que trabajo son..."
@@ -50,7 +50,13 @@
                     "email_format": "Por favor, introduce un mail válido",
                     "subject_required": "Por favor, introduce un asunto",
                     "message_required": "Por favor, introduce tu mensaje"
-                }
+                },
+                "send_to_modal":
+                {
+                    "success": "Se ha enviado su mensaje exitosamente!",
+                    "error":" `Lo siento, hubo un error. \n Intentelo mas tarde " 
+                } 
+
         }
     },
     "footer": {
@@ -68,7 +74,7 @@
             "title": "Dirección"
         },
         "copyright": {
-            "title": "&copy; 2024 Jesus Diaz Dev. Todos los derechos reservados."
+            "title": "© 2024 Jesus Diaz Dev. Todos los derechos reservados."
         }
     },
     "projects_details":{

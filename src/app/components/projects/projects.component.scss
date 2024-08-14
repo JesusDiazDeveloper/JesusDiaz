@@ -107,9 +107,26 @@ $padding-for-carrousel-tablet : 10px;
 .hover-info p,
 :host ::ng-deep .hover-info p {
     height: 40%;
-    font-size: 1rem;
+    font-size: 0.6em;
     margin: 0;
     text-align: center;
+    padding : 0 0.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+        -webkit-line-clamp: 2; /* Número máximo de líneas */
+        -webkit-box-orient: vertical;
+    @include tablet{
+        font-size: 0.7rem;
+    }
+    @include laptop{
+        font-size: 0.8rem;
+        
+    }
+    @include desktop{
+        margin-top: 0.5rem;
+        font-size: 1rem;
+    }
 }
 
 .hover-info .technologies-container {

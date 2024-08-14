@@ -1,0 +1,10 @@
+<div class="overlay">
+    <div class="modal_container">
+        <span class="modal_close_button" (click)="closeModal()">&times;</span>
+        <div class="modal_info">
+            @for (sentence of getMessageLines(); track $index) {
+                <p>{{sentence}}</p>
+            }
+        </div>
+    </div>
+</div>

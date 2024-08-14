@@ -38,10 +38,18 @@
                 [ngClass]="{    'is-invalid':   hasErrors('message', 'required') }">
 
         </textarea >
+            <!-- <div>{{"home.contact.send_to_modal.success" | translate}}</div> -->
             <div *ngIf="hasErrors('message', 'required')" class="warning-text">{{ "home.contact.error_message.message_required"|translate}}</div>
         </div>
+
+        @if (success_message) {
+            <app-custom-modal custom_message='{{"home.contact.send_to_modal.success" | translate}}' (click)="closeModal()" ></app-custom-modal>
+        }
+        @if (there_was_an_error) {
+            <app-custom-modal custom_message='{{"home.contact.send_to_modal.error" | translate}}' (click)="closeModal()" ></app-custom-modal>
+        }
+        
         <button [ngClass]="{'primary_button_disabled' : !this.form.valid}" [disabled]="!this.form.valid" type="submit" class="primary-button">{{"home.contact.btn_send" | translate}}</button>
     </form>
-
 
 </section>
